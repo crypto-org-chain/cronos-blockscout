@@ -73,7 +73,7 @@ defmodule BlockScoutWeb.WeiHelpers do
     end
   end
 
-  defp display_unit(:wei), do: gettext("baseetcro")
+  defp display_unit(:wei), do: gettext("basetcro")
   defp display_unit(:gwei), do: gettext("basetcro")
   defp display_unit(:ether), do: gettext("TCRO")
 end

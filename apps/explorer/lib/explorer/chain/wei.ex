@@ -234,7 +234,7 @@ defmodule Explorer.Chain.Wei do
 
       iex> Explorer.Chain.Wei.to(%Explorer.Chain.Wei{value: Decimal.new(1)}, :gwei)
       Decimal.new("1e-10")
-      iex> Explorer.Chain.Wei.to(%Explorer.Chain.Wei{value: Decimal.new("1e9")}, :gwei)
+      iex> Explorer.Chain.Wei.to(%Explorer.Chain.Wei{value: Decimal.new("1e10")}, :gwei)
       Decimal.new(1)
 
   Convert wei to `t:ether/0`.
