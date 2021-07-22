@@ -2762,7 +2762,7 @@ msgstr ""
 msgid "Discord"
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:55
 msgid "Documentation"
 msgstr ""
@@ -2795,13 +2795,9 @@ msgid "TCRO"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/views/wei_helpers.ex:76
-msgid "baseetcro"
-msgstr ""
-
-#, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:53
 #: lib/block_scout_web/views/block_view.ex:20
+#: lib/block_scout_web/views/wei_helpers.ex:76
 #: lib/block_scout_web/views/wei_helpers.ex:77
 msgid "basetcro"
 msgstr ""
