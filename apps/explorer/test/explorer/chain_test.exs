@@ -874,7 +874,7 @@ defmodule Explorer.ChainTest do
 
     test "with Address.t with :gwei" do
       assert Chain.balance(%Address{fetched_coin_balance: %Wei{value: Decimal.new(1)}}, :gwei) == Decimal.new("1e-10")
-      assert Chain.balance(%Address{fetched_coin_balance: %Wei{value: Decimal.new("1e9")}}, :gwei) == Decimal.new(1)
+      assert Chain.balance(%Address{fetched_coin_balance: %Wei{value: Decimal.new("1e10")}}, :gwei) == Decimal.new(1)
       assert Chain.balance(%Address{fetched_coin_balance: nil}, :gwei) == nil
     end
 
@@ -1008,7 +1008,7 @@ defmodule Explorer.ChainTest do
 
     test "without receipt with :gwei unit" do
       assert Chain.fee(%Transaction{gas: Decimal.new(3), gas_price: %Wei{value: Decimal.new(2)}, gas_used: nil}, :gwei) ==
-               {:maximum, Decimal.new("6e-9")}
+               {:maximum, Decimal.new("6e-10")}
     end
 
     test "without receipt with :ether unit" do
@@ -1035,7 +1035,7 @@ defmodule Explorer.ChainTest do
                  gas_used: Decimal.new(2)
                },
                :gwei
-             ) == {:actual, Decimal.new("4e-9")}
+             ) == {:actual, Decimal.new("4e-10")}
     end
 
     test "with receipt with :ether unit" do
@@ -1115,7 +1115,7 @@ defmodule Explorer.ChainTest do
     test ":gwei unit" do
       assert Chain.gas_price(%Transaction{gas_price: %Wei{value: Decimal.new(1)}}, :gwei) == Decimal.new("1e-10")
 
-      assert Chain.gas_price(%Transaction{gas_price: %Wei{value: Decimal.new("1e9")}}, :gwei) == Decimal.new(1)
+      assert Chain.gas_price(%Transaction{gas_price: %Wei{value: Decimal.new("1e10")}}, :gwei) == Decimal.new(1)
     end
 
     test ":ether unit" do
@@ -3185,7 +3185,7 @@ defmodule Explorer.ChainTest do
     test "with InternalTransaction.t with :gwei" do
       assert Chain.value(%InternalTransaction{value: %Wei{value: Decimal.new(1)}}, :gwei) == Decimal.new("1e-10")
 
-      assert Chain.value(%InternalTransaction{value: %Wei{value: Decimal.new("1e9")}}, :gwei) == Decimal.new(1)
+      assert Chain.value(%InternalTransaction{value: %Wei{value: Decimal.new("1e10")}}, :gwei) == Decimal.new(1)
     end
 
     test "with InternalTransaction.t with :ether" do
@@ -3200,7 +3200,7 @@ defmodule Explorer.ChainTest do
 
     test "with Transaction.t with :gwei" do
       assert Chain.value(%Transaction{value: %Wei{value: Decimal.new(1)}}, :gwei) == Decimal.new("1e-10")
-      assert Chain.value(%Transaction{value: %Wei{value: Decimal.new("1e9")}}, :gwei) == Decimal.new(1)
+      assert Chain.value(%Transaction{value: %Wei{value: Decimal.new("1e10")}}, :gwei) == Decimal.new(1)
     end
 
     test "with Transaction.t with :ether" do
