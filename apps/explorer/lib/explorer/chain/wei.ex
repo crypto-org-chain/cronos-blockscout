@@ -120,7 +120,7 @@ defmodule Explorer.Chain.Wei do
         }
 
   @wei_per_ether Decimal.new(1_000_000_000_000_000_000)
-  @wei_per_gwei Decimal.new(1_000_000_000)
+  @wei_per_gwei Decimal.new(10_000_000_000)
 
   @spec hex_format(Wei.t()) :: String.t()
   def hex_format(%Wei{value: decimal}) do
@@ -196,7 +196,7 @@ defmodule Explorer.Chain.Wei do
   Convert `t:gwei/0` to wei.
 
       iex> Explorer.Chain.Wei.from(Decimal.new(1), :gwei)
-      %Explorer.Chain.Wei{value: Decimal.new(1_000_000_000)}
+      %Explorer.Chain.Wei{value: Decimal.new(10_000_000_000)}
 
   Convert `t:ether/0` to wei.
 
@@ -233,7 +233,7 @@ defmodule Explorer.Chain.Wei do
   Convert wei to `t:gwei/0`.
 
       iex> Explorer.Chain.Wei.to(%Explorer.Chain.Wei{value: Decimal.new(1)}, :gwei)
-      Decimal.new("1e-9")
+      Decimal.new("1e-10")
       iex> Explorer.Chain.Wei.to(%Explorer.Chain.Wei{value: Decimal.new("1e9")}, :gwei)
       Decimal.new(1)
 

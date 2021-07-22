@@ -2,7 +2,7 @@ import $ from 'jquery'
 
 $(function () {
   const mainBody = $('body')
-  const showNetworkSelector = $('.js-show-network-selector')
+  // const showNetworkSelector = $('.js-show-network-selector')
   const hideNetworkSelector = $('.js-network-selector-close')
   const hideNetworkSelectorOverlay = $('.js-network-selector-overlay-close')
   const networkSelector = $('.js-network-selector')
@@ -12,10 +12,10 @@ $(function () {
   const networkSelectorItemURL = $('.js-network-selector-item-url')
   const FADE_IN_DELAY = 250
 
-  showNetworkSelector.on('click', (e) => {
-    e.preventDefault()
-    openNetworkSelector()
-  })
+  // showNetworkSelector.on('click', (e) => {
+  //   e.preventDefault()
+  //   openNetworkSelector()
+  // })
 
   hideNetworkSelector.on('click', (e) => {
     e.preventDefault()
@@ -45,11 +45,11 @@ $(function () {
     $(`[network-selector-tab="${currentTab.attr('network-selector-tab-filter')}"]`).addClass('active')
   }
 
-  const openNetworkSelector = () => {
-    mainBody.addClass('network-selector-visible')
-    networkSelectorOverlay.fadeIn(FADE_IN_DELAY)
-    setNetworkSelectorVisiblePosition()
-  }
+  // const openNetworkSelector = () => {
+  //   mainBody.addClass('network-selector-visible')
+  //   networkSelectorOverlay.fadeIn(FADE_IN_DELAY)
+  //   setNetworkSelectorVisiblePosition()
+  // }
 
   const closeNetworkSelector = () => {
     mainBody.removeClass('network-selector-visible')
@@ -65,9 +65,9 @@ $(function () {
     return networkSelector.css({ right: `-${getNetworkSelectorWidth()}px` })
   }
 
-  const setNetworkSelectorVisiblePosition = () => {
-    return networkSelector.css({ right: '0' })
-  }
+  // const setNetworkSelectorVisiblePosition = () => {
+  //   return networkSelector.css({ right: '0' })
+  // }
 
   const init = () => {
     setNetworkSelectorHiddenPosition()

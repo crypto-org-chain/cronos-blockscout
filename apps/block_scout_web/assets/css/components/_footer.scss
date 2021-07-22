@@ -101,6 +101,10 @@ $footer-logo-width: auto !default;
         &:focus {
           color: darken($footer-text-color, 5);
         }
+        &:visited {
+          color: $footer-text-color;
+          text-decoration: none;
+        }
       }
 
       &::before {

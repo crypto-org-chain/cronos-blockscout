@@ -24,7 +24,7 @@
         "data-test": "tokens_tab_link"
       ) %>
   <% end %>
-  <%= link(
+  <%# <%= link(
         gettext("Internal Transactions"),
         class: "card-tab #{tab_status("internal-transactions", @conn.request_path)}",
         "data-test": "internal_transactions_tab_link",

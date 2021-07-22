@@ -873,7 +873,7 @@ defmodule Explorer.ChainTest do
     end
 
     test "with Address.t with :gwei" do
-      assert Chain.balance(%Address{fetched_coin_balance: %Wei{value: Decimal.new(1)}}, :gwei) == Decimal.new("1e-9")
+      assert Chain.balance(%Address{fetched_coin_balance: %Wei{value: Decimal.new(1)}}, :gwei) == Decimal.new("1e-10")
       assert Chain.balance(%Address{fetched_coin_balance: %Wei{value: Decimal.new("1e9")}}, :gwei) == Decimal.new(1)
       assert Chain.balance(%Address{fetched_coin_balance: nil}, :gwei) == nil
     end
@@ -1113,7 +1113,7 @@ defmodule Explorer.ChainTest do
     end
 
     test ":gwei unit" do
-      assert Chain.gas_price(%Transaction{gas_price: %Wei{value: Decimal.new(1)}}, :gwei) == Decimal.new("1e-9")
+      assert Chain.gas_price(%Transaction{gas_price: %Wei{value: Decimal.new(1)}}, :gwei) == Decimal.new("1e-10")
 
       assert Chain.gas_price(%Transaction{gas_price: %Wei{value: Decimal.new("1e9")}}, :gwei) == Decimal.new(1)
     end
@@ -3183,7 +3183,7 @@ defmodule Explorer.ChainTest do
     end
 
     test "with InternalTransaction.t with :gwei" do
-      assert Chain.value(%InternalTransaction{value: %Wei{value: Decimal.new(1)}}, :gwei) == Decimal.new("1e-9")
+      assert Chain.value(%InternalTransaction{value: %Wei{value: Decimal.new(1)}}, :gwei) == Decimal.new("1e-10")
 
       assert Chain.value(%InternalTransaction{value: %Wei{value: Decimal.new("1e9")}}, :gwei) == Decimal.new(1)
     end
@@ -3199,7 +3199,7 @@ defmodule Explorer.ChainTest do
     end
 
     test "with Transaction.t with :gwei" do
-      assert Chain.value(%Transaction{value: %Wei{value: Decimal.new(1)}}, :gwei) == Decimal.new("1e-9")
+      assert Chain.value(%Transaction{value: %Wei{value: Decimal.new(1)}}, :gwei) == Decimal.new("1e-10")
       assert Chain.value(%Transaction{value: %Wei{value: Decimal.new("1e9")}}, :gwei) == Decimal.new(1)
     end
 
