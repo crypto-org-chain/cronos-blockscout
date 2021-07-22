@@ -8,7 +8,7 @@ defmodule BlockScoutWeb.AddressCoinBalanceViewTest do
     test "format the wei value in TCRO" do
       wei = Wei.from(Decimal.new(1_340_000_000), :gwei)
 
-      assert AddressCoinBalanceView.format(wei) == "13.44 TCRO"
+      assert AddressCoinBalanceView.format(wei) == "13.4 TCRO"
     end
 
     test "format negative values" do
