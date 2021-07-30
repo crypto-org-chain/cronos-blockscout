@@ -248,6 +248,12 @@ $dashboard-banner-chart-axis-font-color: $dashboard-stats-item-value-color !defa
       padding-left: calc(0.6rem + 4px);
       padding-right: 0.5rem;
     }
+
+    .dashboard-banner-network-stats-label {
+      font-size: 12px;
+      font-weight: 600;
+      margin: 0;
+    }
   }
 
   .dashboard-banner-network-stats-value {
