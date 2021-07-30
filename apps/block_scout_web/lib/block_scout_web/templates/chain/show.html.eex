@@ -175,7 +175,7 @@
   <div class="card card-chain-blocks">
     <div class="card-body">
       <%= link(gettext("View All Blocks"), to: block_path(BlockScoutWeb.Endpoint, :index), class: "btn-line float-right") %>
-      <h1 class="card-title"><%= gettext "Blocks" %></h2>
+      <h1 class="card-title"><%= gettext "Blocks" %></h1>
       <div class="row" data-selector="chain-block-list" data-url="<%= chain_blocks_path(@conn, :chain_blocks) %>">
         <button data-selector="error-message" class="alert alert-danger col-12 text-left" style="display: none;">
           <span class="alert-link">
