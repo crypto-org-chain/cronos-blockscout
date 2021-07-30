@@ -359,11 +359,6 @@ msgid "Block number"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/chain/_metatags.html.eex:4
-msgid "BlockScout provides analytics data, API, and Smart Contract tools for the %{subnetwork}"
-msgstr ""
-
-#, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:178
 #: lib/block_scout_web/templates/layout/_footer.html.eex:44
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:32
