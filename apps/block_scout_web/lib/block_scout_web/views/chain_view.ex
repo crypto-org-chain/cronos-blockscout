@@ -3,7 +3,6 @@ defmodule BlockScoutWeb.ChainView do
 
   import Number.Currency, only: [number_to_currency: 1, number_to_currency: 2]
 
-  alias BlockScoutWeb.LayoutView
   alias Explorer.Chain.Supply.TokenBridge
 
   defp market_cap(:standard, %{available_supply: available_supply, usd_value: usd_value})
