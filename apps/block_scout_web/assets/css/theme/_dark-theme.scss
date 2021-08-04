@@ -1,9 +1,12 @@
-$body-dark: #1c1d31; // body background
-$dark-bg: #22223a; // hero shade
-$dark-light-bg: #282945; // pills bg shade
-$dark-light: #313355; // tile light top share
+$body-dark: #051221; // body background
+$dark-bg: rgba(255, 255, 255, 0.05); // hero shade
+$dark-light-bg: #0b1426; // pills bg shade
+$dark-light: rgba(17,153,250,.1); // tile light top share
 $labels-dark: #8a8dba; // header nav, labels
 $dark-stakes-banned-background: #3e314c;
+$dark-card-bg: rgba(255, 255, 255, 0.05);
+$dark-card-tile-bg: rgba(17,153,250,.1);
+$dark-dropdown-menu-bg: #151e2b;
 
 // Switcher
 .dark-mode-changer {
@@ -124,7 +127,7 @@ $dark-stakes-banned-background: #3e314c;
 	}
 
 	.card {
-		background-color: $dark-light-bg;
+		background-color: $dark-card-bg;
 		box-shadow: 0 0 30px 0 rgba(23, 24, 41, 0.5);
 	}
 
@@ -162,16 +165,16 @@ $dark-stakes-banned-background: #3e314c;
 	}
 
 	.tile {
-		border-top-color: $dark-light;
-		border-bottom-color: $dark-light;
-		border-right-color: $dark-light;
-		background-color: $dark-light;
+		border-top-color: transparent;
+		border-bottom-color: transparent;
+		border-right-color: transparent;
+		background-color: $dark-card-tile-bg;
 		color: $labels-dark;
 		&:not([class^="tile tile-type"]) {
-			border-left-color: $dark-light;
+			border-left-color: transparent;
 		}
 		&.tile-type-coin-balance {
-			border-left-color: $dark-light;
+			border-left-color: transparent;
 		}
 		.tile-title {
 			color: #fff;
@@ -276,10 +279,10 @@ $dark-stakes-banned-background: #3e314c;
 
 	// dropdown
 	.dropdown-menu {
-		background-color: $dark-light;
-		border-left-color: $dark-light;
-		border-right-color: $dark-light;
-		border-bottom-color: $dark-light;
+		background-color: $dark-dropdown-menu-bg;
+		border-left-color: $dark-dropdown-menu-bg;
+		border-right-color: $dark-dropdown-menu-bg;
+		border-bottom-color: $dark-dropdown-menu-bg;
 	}
 
 	.dropdown-item {
@@ -1006,6 +1009,14 @@ $dark-stakes-banned-background: #3e314c;
 		color: #fff;
 	}
 
+	.bs-label {
+		background: #1199FA;
+	}
+
+	.bs-label.method {
+		color: #fff
+	}
+
 	.bs-label.omni {
 		background: #6ca1e2
 	}
@@ -1112,7 +1123,7 @@ $dark-stakes-banned-background: #3e314c;
 .dark-theme-applied .dropdown-item.active:not(.header), .dark-theme-applied .dropdown-item:not(.header):hover, .dark-theme-applied .dropdown-item:not(.header):focus {
     background-image: none;
     width: 100%;
-    background-color: #3f426c !important;
+    background-color: #1b3049 !important;
 }
 
 @media (max-width: 991.98px) {
