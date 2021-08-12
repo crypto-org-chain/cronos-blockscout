@@ -2743,11 +2743,6 @@ msgid "Copyright © 2021 CRO Protocol Labs. All rights reserved."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/chain/_metatags.html.eex:2
-msgid "Cronos Chain Explorer"
-msgstr ""
-
-#, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:54
 msgid "Cronos Website"
 msgstr ""
@@ -2795,4 +2790,18 @@ msgstr ""
 #: lib/block_scout_web/views/wei_helpers.ex:76
 #: lib/block_scout_web/views/wei_helpers.ex:77
 msgid "basetcro"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/chain/_metatags.html.eex:2
+#: lib/block_scout_web/templates/chain/_metatags.html.eex:8
+#: lib/block_scout_web/templates/chain/_metatags.html.eex:16
+msgid "Cronos | Crypto.org EVM Chain | Explorer"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/chain/_metatags.html.eex:5
+#: lib/block_scout_web/templates/chain/_metatags.html.eex:9
+#: lib/block_scout_web/templates/chain/_metatags.html.eex:17
+msgid "Find out the latest blocks and transactions with Cronos Explorer to find the price,average block time, total transactions, total blocks, wallet addresses and more."
 msgstr ""
