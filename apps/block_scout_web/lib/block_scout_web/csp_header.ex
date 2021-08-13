@@ -13,7 +13,7 @@ defmodule BlockScoutWeb.CSPHeader do
       "content-security-policy" => "\
         connect-src 'self' #{websocket_endpoints(conn)};\
         default-src 'self';\
-        script-src 'self' 'unsafe-inline' 'unsafe-eval';\
+        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://ajax.cloudflare.com;\
         style-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com;\
         img-src 'self' * data:;\
         media-src 'self' * data:;\
