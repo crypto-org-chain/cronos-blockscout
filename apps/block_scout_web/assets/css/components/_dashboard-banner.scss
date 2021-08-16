@@ -159,10 +159,6 @@ $dashboard-banner-chart-axis-font-color: $dashboard-stats-item-value-color !defa
       font-size: 1.25rem;
     }
 
-    //@media (max-width: 474px) {
-    //  font-size: 12px;
-    //}
-
     &.inline {
       display: inline-block;
     }
@@ -229,7 +225,6 @@ $dashboard-banner-chart-axis-font-color: $dashboard-stats-item-value-color !defa
     box-shadow: 0 0 35px 0 rgba(0, 0, 0, 0.2);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-
 
     @include media-breakpoint-down(md) {
       display: none;
