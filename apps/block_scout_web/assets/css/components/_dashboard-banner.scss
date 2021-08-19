@@ -47,7 +47,7 @@ $dashboard-banner-chart-axis-font-color: $dashboard-stats-item-value-color !defa
 
 .dashboard-banner-network-graph {
   flex-grow: 1;
-  padding: 15px 0 0 0;
+  //padding: 15px 0 0 0;
 
   @include media-breakpoint-down(md) {
     display: flex;
@@ -62,7 +62,7 @@ $dashboard-banner-chart-axis-font-color: $dashboard-stats-item-value-color !defa
   max-width: 350px;
   position: relative;
   min-height: 100px;
-  height: calc(100% - 86px);
+  height: 100%;
 
   @include media-breakpoint-down(md) {
     flex-grow: 0;
@@ -81,8 +81,8 @@ $dashboard-banner-chart-axis-font-color: $dashboard-stats-item-value-color !defa
 .dashboard-banner-chart-legend {
   display: grid;
   grid-template-columns: repeat(var(--numChartData), 0.9fr);
-  padding-bottom: 12px;
-  padding-left:20px;
+  padding-top: 30px;
+
 
   .dashboard-banner-chart-legend-item {
     padding-bottom: 3px;
@@ -94,6 +94,10 @@ $dashboard-banner-chart-axis-font-color: $dashboard-stats-item-value-color !defa
     @include media-breakpoint-down(md) {
       display: flex;
       flex-direction: row;
+    }
+
+    @media (max-width: 1200px) {
+      padding-top: 12px;
     }
 
     @media (max-width: 599px) {
@@ -226,6 +230,11 @@ $dashboard-banner-chart-axis-font-color: $dashboard-stats-item-value-color !defa
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 
+    @media (max-width: 1200px) {
+      height: 300px;
+      bottom: -50px;
+    }
+
     @include media-breakpoint-down(md) {
       display: none;
     }
@@ -235,7 +244,7 @@ $dashboard-banner-chart-axis-font-color: $dashboard-stats-item-value-color !defa
 .dashboard-banner-network-stats {
   column-gap: 25px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 
   @include media-breakpoint-down(lg) {
     grid-template-columns: 1fr 1fr;
@@ -255,6 +264,7 @@ $dashboard-banner-chart-axis-font-color: $dashboard-stats-item-value-color !defa
   @include stats-item($dashboard-stats-item-border-color, $dashboard-stats-item-label-color, $dashboard-stats-item-value-color);
 
   .dashboard-banner-network-stats-item {
+    margin: 18px 0;
     @media (max-width: 374px) {
       padding-left: calc(0.6rem + 4px);
       padding-right: 0.5rem;
