@@ -3,7 +3,7 @@ defmodule BlockScoutWeb.ChainView do
 
   import Number.Currency, only: [number_to_currency: 1, number_to_currency: 2]
 
-  alias Explorer.Chain.Supply.TokenBridge
+#  alias Explorer.Chain.Supply.TokenBridge
 
   defp market_cap(:standard, %{available_supply: available_supply, usd_value: usd_value})
        when is_nil(available_supply) or is_nil(usd_value) do
@@ -22,17 +22,17 @@ defmodule BlockScoutWeb.ChainView do
     module.market_cap(exchange_rate)
   end
 
-  defp total_market_cap_from_token_bridge(%{usd_value: usd_value}) do
-    TokenBridge.token_bridge_market_cap(%{usd_value: usd_value})
-  end
-
-  defp total_market_cap_from_omni_bridge do
-    TokenBridge.total_market_cap_from_omni_bridge()
-  end
-
-  defp token_bridge_supply? do
-    if System.get_env("SUPPLY_MODULE") === "TokenBridge", do: true, else: false
-  end
+#  defp total_market_cap_from_token_bridge(%{usd_value: usd_value}) do
+#    TokenBridge.token_bridge_market_cap(%{usd_value: usd_value})
+#  end
+#
+#  defp total_market_cap_from_omni_bridge do
+#    TokenBridge.total_market_cap_from_omni_bridge()
+#  end
+#
+#  defp token_bridge_supply? do
+#    if System.get_env("SUPPLY_MODULE") === "TokenBridge", do: true, else: false
+#  end
 
   def format_usd_value(value) do
     "#{format_currency_value(value)} USD"
