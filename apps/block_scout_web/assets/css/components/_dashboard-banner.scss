@@ -47,7 +47,6 @@ $dashboard-banner-chart-axis-font-color: $dashboard-stats-item-value-color !defa
 
 .dashboard-banner-network-graph {
   flex-grow: 1;
-  //padding: 15px 0 0 0;
 
   @include media-breakpoint-down(md) {
     display: flex;
