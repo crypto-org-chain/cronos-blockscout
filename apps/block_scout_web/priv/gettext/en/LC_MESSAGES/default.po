@@ -359,7 +359,7 @@ msgid "Block number"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/chain/show.html.eex:117
+#: lib/block_scout_web/templates/chain/show.html.eex:123
 #: lib/block_scout_web/templates/layout/_footer.html.eex:44
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:32
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:36
@@ -1270,7 +1270,7 @@ msgid "Mainnet"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/chain/show.html.eex:99
+#: lib/block_scout_web/templates/chain/show.html.eex:102
 #: lib/block_scout_web/templates/layout/app.html.eex:31
 #: lib/block_scout_web/views/address_view.ex:142
 msgid "Market Cap"
@@ -1350,7 +1350,7 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_transaction/index.html.eex:50
-#: lib/block_scout_web/templates/chain/show.html.eex:178
+#: lib/block_scout_web/templates/chain/show.html.eex:184
 #: lib/block_scout_web/templates/pending_transaction/index.html.eex:12
 #: lib/block_scout_web/templates/transaction/index.html.eex:18
 msgid "More transactions have come in"
@@ -1759,7 +1759,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address_transaction/index.html.eex:54
 #: lib/block_scout_web/templates/address_validation/index.html.eex:24
 #: lib/block_scout_web/templates/block_transaction/index.html.eex:23
-#: lib/block_scout_web/templates/chain/show.html.eex:121
+#: lib/block_scout_web/templates/chain/show.html.eex:127
 #: lib/block_scout_web/templates/pending_transaction/index.html.eex:21
 #: lib/block_scout_web/templates/stakes/_table.html.eex:49
 #: lib/block_scout_web/templates/tokens/holder/index.html.eex:27
@@ -1774,7 +1774,7 @@ msgid "Something went wrong, click to reload."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/chain/show.html.eex:184
+#: lib/block_scout_web/templates/chain/show.html.eex:190
 msgid "Something went wrong, click to retry."
 msgstr ""
 
@@ -2274,7 +2274,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address_transaction/index.html.eex:17
 #: lib/block_scout_web/templates/block_transaction/index.html.eex:10
 #: lib/block_scout_web/templates/block_transaction/index.html.eex:18
-#: lib/block_scout_web/templates/chain/show.html.eex:175
+#: lib/block_scout_web/templates/chain/show.html.eex:181
 #: lib/block_scout_web/templates/layout/_footer.html.eex:45
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:51
 #: lib/block_scout_web/views/address_view.ex:345
@@ -2439,12 +2439,12 @@ msgid "Verify the contract "
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/chain/show.html.eex:116
+#: lib/block_scout_web/templates/chain/show.html.eex:122
 msgid "View All Blocks"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/chain/show.html.eex:174
+#: lib/block_scout_web/templates/chain/show.html.eex:180
 msgid "View All Transactions"
 msgstr ""
 
