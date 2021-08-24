@@ -1101,6 +1101,9 @@ $dark-btn-hover-bg: #43aefb;
 		background-color: transparent !important;
 		color: #fff !important;
 	}
+	.autocomplete-category {
+		color: #fff !important;
+	}
 	ul[id^='autoComplete_list_'] {
 		background-color: $dark-light-bg !important;
 	}
@@ -1164,4 +1167,7 @@ $dark-btn-hover-bg: #43aefb;
 		top: 14%;
 		color: $dark-primary;
 	}
+}
+.dark-theme-applied .confirmations-label:after {
+    background: .7rem solid $dark-light-bg;
 }
