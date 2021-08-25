@@ -35,7 +35,7 @@
       </div>
       <div class="text-nowrap text-truncate mt-3 mt-md-0">
         <!-- validator -->
-        <%= gettext "Miner" %>
+        <%= gettext "Block Proposer" %>
         <%= render BlockScoutWeb.AddressView,
           "_link.html",
           address: @block.miner,
