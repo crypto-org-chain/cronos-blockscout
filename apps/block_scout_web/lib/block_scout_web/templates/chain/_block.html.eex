@@ -12,7 +12,7 @@
         <span class="text-nowrap" data-from-now="<%= @block.timestamp %>"> </span>
       </div>
       <div class="text-truncate">
-        <%= gettext "Miner" %>
+        <%= gettext "Block Proposer" %>
         <%= render BlockScoutWeb.AddressView,
           "_link.html",
           address: @block.miner,
