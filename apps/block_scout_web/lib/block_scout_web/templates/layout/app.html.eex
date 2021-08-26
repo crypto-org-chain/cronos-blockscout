@@ -248,7 +248,7 @@
     </script>
     <script defer data-cfasync="false">
       if (localStorage.getItem("current-color-mode") === "dark") {
-        document.getElementById("top-navbar").style.backgroundColor = "#282945";
+        document.getElementById("top-navbar").style.backgroundColor = "#0b1426";
         document.getElementById("navbar-logo").style.filter = "brightness(0) invert(1)";
         let modeChanger = document.getElementById("dark-mode-changer");
         modeChanger.className += " " + "dark-mode-changer--dark";
