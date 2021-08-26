@@ -19,7 +19,6 @@
                   data-history_chart_config = '<%= @chart_config_json %>'
                   width="350" height="250">
           </canvas>
-          <script data-cfasync="false" src="<%= static_path(@conn, "/js/chart-loader.js") %>"></script>
         </div>
         <!-- Legend -->
         <script>
@@ -114,10 +113,9 @@
       </div>
     </div>
   </div>
-  <script defer data-cfasync="false" src="<%= static_path(@conn, "/js/chain.js") %>"></script>
 </div>
 <section class="container">
-  <div class="card card-chain-blocks">
+  <div class="card card-chain-blocks js-ad-dependant-mb-3">
     <div class="card-body">
       <%= link(gettext("View All Blocks"), to: block_path(BlockScoutWeb.Endpoint, :index), class: "btn-line float-right") %>
       <h1 class="card-title"><%= gettext "Blocks" %></h1>
@@ -175,6 +173,8 @@
     </div>
   </div>
 
+  <%= render BlockScoutWeb.Advertisement.BannersAdView, "_banner_728.html", conn: @conn %>
+
   <div class="card card-chain-transactions">
     <div class="card-body">
       <%= link(gettext("View All Transactions"), to: transaction_path(BlockScoutWeb.Endpoint, :index), class: "btn-line float-right") %>
@@ -196,5 +196,4 @@
       </span>
     </div>
   </div>
-  <script defer data-cfasync="false" src="<%= static_path(@conn, "/js/token-transfers-toggle.js") %>"></script>
 </section>
