@@ -14,11 +14,6 @@ defmodule BlockScoutWeb.LayoutView do
       url: "https://blockscout.com/poa/core"
     },
     %{
-      title: "Sokol",
-      url: "https://blockscout.com/poa/sokol",
-      test_net?: true
-    },
-    %{
       title: "xDai",
       url: "https://blockscout.com/xdai/mainnet"
     },
