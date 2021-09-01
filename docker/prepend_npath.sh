@@ -8,8 +8,8 @@ cd /opt/app
 
 # Find and replace code to add NETWORK_PATH
 # NETWORK_PATH must not have / at the end
-if [[ -z "$NETWORK_PATH" ]]; then
-    echo "NETWORK_PATH env variable is not set. Will not prepend anything"
+if [ -z "$NETWORK_PATH" ] || [ "$NETWORK_PATH" == '/' ]; then
+    echo "NETWORK_PATH env variable is not set or equals root path. Will not prepend anything"
 else
     echo "Prepending $NETWORK_PATH"
 
