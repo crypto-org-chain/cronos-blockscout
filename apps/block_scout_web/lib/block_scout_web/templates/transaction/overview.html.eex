@@ -317,7 +317,7 @@
                 text: gettext("Price per unit of gas specified by the sender. Higher gas prices can prioritize transaction inclusion during times of high usage.") %>
               <%= gettext "Gas Price" %>
             </dt>
-            <dd class="col-sm-9 col-lg-10"> <%= gas_price(@transaction, :gwei) %> </dd>
+            <dd class="col-sm-9 col-lg-10"> <%= gas_price(@transaction, :ether) %> </dd>
           </dl>
           <hr>
           <!-- Gas Limit -->
