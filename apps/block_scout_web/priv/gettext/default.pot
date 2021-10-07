@@ -1496,7 +1496,6 @@ msgid "Press / and focus will be moved to the search field"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/chain/show.html.eex:41
 #: lib/block_scout_web/templates/layout/app.html.eex:44
 msgid "Price"
 msgstr ""
@@ -2980,4 +2979,9 @@ msgstr ""
 #:
 #: lib/block_scout_web/templates/transaction_internal_transaction/index.html.eex:17
 msgid "No internal transactions found."
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/chain/show.html.eex:41
+msgid "CRO Price"
 msgstr ""
