@@ -188,15 +188,15 @@
                 <% created_address_hash -> %>
                   [<%= gettext("Contract") %>&nbsp;
                   <%= link(
-                    recipient_address_hash,
-                    to: address_path(@conn, :show, recipient_address_hash)
+                    created_address_hash,
+                    to: address_path(@conn, :show, created_address_hash)
                   ) %>
                   &nbsp;<%= gettext("created") %>]
 
                   <span class="float-right">
                     <%= render BlockScoutWeb.CommonComponentsView, "_btn_copy.html",
                       additional_classes: ["btn-copy-icon-small", "btn-copy-icon-custom", "btn-copy-icon-no-borders"],
-                      clipboard_text: recipient_address_hash,
+                      clipboard_text: created_address_hash,
                       aria_label: gettext("Copy To Address"),
                       title: gettext("Copy To Address") %>
                   </span>
