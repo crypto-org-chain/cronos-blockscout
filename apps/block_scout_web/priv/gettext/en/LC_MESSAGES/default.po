@@ -2946,12 +2946,6 @@ msgid "Home"
 msgstr ""
 
 #, elixir-format
-#:
-#: lib/block_scout_web/templates/transaction_internal_transaction/index.html.eex:17
-msgid "Internal transactions are not supported yet."
-msgstr ""
-
-#, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:52
 msgid "Resources"
 msgstr ""
@@ -2979,6 +2973,12 @@ msgstr ""
 #: lib/block_scout_web/templates/block/overview.html.eex:125
 #: lib/block_scout_web/templates/chain/_block.html.eex:15
 msgid "Block Proposer"
+msgstr ""
+
+#, elixir-format
+#:
+#: lib/block_scout_web/templates/transaction_internal_transaction/index.html.eex:17
+msgid "No internal transactions found."
 msgstr ""
 
 #, elixir-format
