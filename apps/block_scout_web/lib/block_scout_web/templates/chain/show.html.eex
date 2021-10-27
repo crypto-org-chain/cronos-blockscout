@@ -49,7 +49,7 @@
                             <%= render BlockScoutWeb.IconsView, "_gas_price_icon.html" %>
                           </span>
                           <%= @gas_price <> " " %>
-                          <%= gettext "basetcro" %>
+                          <%= System.get_env("BASE_DENOM") || gettext("basetcro") %>
                         </span>
                       <% end %>
                     </div>
