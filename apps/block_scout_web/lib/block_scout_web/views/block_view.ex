@@ -17,7 +17,7 @@ defmodule BlockScoutWeb.BlockView do
       |> Kernel.||(0)
       |> BlockScoutWeb.Cldr.Number.to_string!()
 
-    unit_text = gettext("basetcro")
+    unit_text = System.get_env("BASE_DENOM") || gettext("basetcro")
 
     "#{average} #{unit_text}"
   end

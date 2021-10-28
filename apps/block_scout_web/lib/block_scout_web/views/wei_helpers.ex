@@ -73,7 +73,7 @@ defmodule BlockScoutWeb.WeiHelpers do
     end
   end
 
-  defp display_unit(:wei), do: gettext("basetcro")
-  defp display_unit(:gwei), do: gettext("basetcro")
-  defp display_unit(:ether), do: gettext("TCRO")
+  defp display_unit(:wei), do: System.get_env("BASE_DENOM") || gettext("basetcro")
+  defp display_unit(:gwei), do: System.get_env("BASE_DENOM") || gettext("basetcro")
+  defp display_unit(:ether), do: System.get_env("MAIN_DENOM") || gettext("TCRO")
 end
