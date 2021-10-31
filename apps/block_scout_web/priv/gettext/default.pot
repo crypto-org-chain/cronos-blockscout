@@ -226,7 +226,7 @@ msgid "Approximate Current Annual Percentage Yield. If you see N/A, please wait 
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:150
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:183
 msgid "Apps"
 msgstr ""
 
@@ -1783,7 +1783,7 @@ msgid "Staker's Address"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:152
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:185
 msgid "Stakes"
 msgstr ""
 
@@ -1795,7 +1795,7 @@ msgid "Stakes Ratio"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:158
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:191
 msgid "Staking"
 msgstr ""
 
@@ -2984,4 +2984,36 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:41
 msgid "CRO Price"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:154
+msgid "Cronos Cosmos Mainnet"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:165
+msgid "Cronos Cosmos Testnet"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:146
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:159
+msgid "Cronos EVM Mainnet"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:148
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:170
+msgid "Cronos EVM Testnet"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:152
+msgid "Mainnets"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:163
+msgid "Testnets"
 msgstr ""
