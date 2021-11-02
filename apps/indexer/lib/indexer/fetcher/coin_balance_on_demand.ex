@@ -7,7 +7,7 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
   If we have a fetched coin balance, but it is over 100 blocks old, we will fetch and create a fetched coin baalnce.
   """
 
-  @latest_balance_stale_threshold :timer.seconds(1)
+  # @latest_balance_stale_threshold :timer.seconds(1)
 
   use GenServer
   use Indexer.Fetcher
@@ -18,11 +18,11 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
   alias EthereumJSONRPC.FetchedBalances
   alias Explorer.{Chain, Repo}
   alias Explorer.Chain.Address
-  alias Explorer.Chain.Address.{CoinBalance, CoinBalanceDaily}
+  alias Explorer.Chain.Address.{ CoinBalanceDaily}
   alias Explorer.Chain.Cache.{Accounts, BlockNumber}
-  alias Explorer.Counters.AverageBlockTime
+  # alias Explorer.Counters.AverageBlockTime
   alias Indexer.Fetcher.CoinBalance, as: CoinBalanceFetcher
-  alias Timex.Duration
+  # alias Timex.Duration
 
   @type block_number :: integer
 
@@ -43,13 +43,7 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
   def trigger_fetch(address) do
     latest_block_number = latest_block_number()
 
-    case stale_balance_window(latest_block_number) do
-      {:error, _} ->
-        :current
-
-      stale_balance_window ->
-        do_trigger_fetch(address, latest_block_number, stale_balance_window)
-    end
+    do_trigger_fetch(address, latest_block_number)
   end
 
   ## Callbacks
@@ -94,13 +88,13 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
 
   ## Implementation
 
-  defp do_trigger_fetch(%Address{fetched_coin_balance_block_number: nil} = address, latest_block_number, _) do
+  defp do_trigger_fetch(%Address{fetched_coin_balance_block_number: nil} = address, latest_block_number) do
     GenServer.cast(__MODULE__, {:fetch_and_update, latest_block_number, address})
 
     {:stale, 0}
   end
 
-  defp do_trigger_fetch(address, latest_block_number, stale_balance_window) do
+  defp do_trigger_fetch(address, latest_block_number) do
     latest_by_day =
       from(
         cbd in CoinBalanceDaily,
@@ -109,52 +103,20 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
         limit: 1
       )
 
-    latest =
-      from(
-        cb in CoinBalance,
-        where: cb.address_hash == ^address.hash,
-        where: cb.block_number >= ^stale_balance_window,
-        where: is_nil(cb.value_fetched_at),
-        order_by: [desc: :block_number],
-        limit: 1
-      )
-
-    do_trigger_balance_fetch_query(address, latest_block_number, stale_balance_window, latest, latest_by_day)
-  end
-
-  defp do_trigger_balance_fetch_query(
-         address,
-         latest_block_number,
-         stale_balance_window,
-         query_balances,
-         query_balances_daily
-       ) do
-    if address.fetched_coin_balance_block_number < stale_balance_window do
-      do_trigger_balance_daily_fetch_query(address, latest_block_number, query_balances_daily)
+      do_trigger_balance_daily_fetch_query(address, latest_block_number, latest_by_day)
       GenServer.cast(__MODULE__, {:fetch_and_update, latest_block_number, address})
-
       {:stale, latest_block_number}
-    else
-      case Repo.one(query_balances) do
-        nil ->
-          # There is no recent coin balance to fetch, so we check to see how old the
-          # balance is on the address. If it is too old, we check again, just to be safe.
-          do_trigger_balance_daily_fetch_query(address, latest_block_number, query_balances_daily)
-
-          :current
-
-        %CoinBalance{value_fetched_at: nil, block_number: block_number} ->
-          GenServer.cast(__MODULE__, {:fetch_and_import, block_number, address})
-
-          {:pending, block_number}
-
-        %CoinBalance{} ->
-          do_trigger_balance_daily_fetch_query(address, latest_block_number, query_balances_daily)
-
-          :current
-      end
-    end
   end
+
+  # defp do_trigger_balance_fetch_query(
+  #        address,
+  #        latest_block_number,
+  #        query_balances_daily
+  #      ) do
+  #   do_trigger_balance_daily_fetch_query(address, latest_block_number, query_balances_daily)
+  #   GenServer.cast(__MODULE__, {:fetch_and_update, latest_block_number, address})
+  #   {:stale, latest_block_number}
+  # end
 
   defp do_trigger_balance_daily_fetch_query(address, latest_block_number, query) do
     if Repo.one(query) == nil do
@@ -218,22 +180,22 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
     BlockNumber.get_max()
   end
 
-  defp stale_balance_window(block_number) do
-    case AverageBlockTime.average_block_time() do
-      {:error, :disabled} ->
-        {:error, :no_average_block_time}
+  # defp stale_balance_window(block_number) do
+  #   case AverageBlockTime.average_block_time() do
+  #     {:error, :disabled} ->
+  #       {:error, :no_average_block_time}
 
-      duration ->
-        average_block_time =
-          duration
-          |> Duration.to_milliseconds()
-          |> round()
+  #     duration ->
+  #       average_block_time =
+  #         duration
+  #         |> Duration.to_milliseconds()
+  #         |> round()
 
-        if average_block_time == 0 do
-          {:error, :empty_database}
-        else
-          block_number - div(@latest_balance_stale_threshold, average_block_time)
-        end
-    end
-  end
+  #       if average_block_time == 0 do
+  #         {:error, :empty_database}
+  #       else
+  #         block_number - div(@latest_balance_stale_threshold, average_block_time)
+  #       end
+  #   end
+  # end
 end
