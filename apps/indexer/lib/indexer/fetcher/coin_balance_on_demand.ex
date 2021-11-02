@@ -15,6 +15,8 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
   import Ecto.Query, only: [from: 2]
   import EthereumJSONRPC, only: [integer_to_quantity: 1]
 
+  require Logger
+
   alias EthereumJSONRPC.FetchedBalances
   alias Explorer.{Chain, Repo}
   alias Explorer.Chain.Address
@@ -42,6 +44,8 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
   @spec trigger_fetch(Address.t()) :: balance_status
   def trigger_fetch(address) do
     latest_block_number = latest_block_number()
+    Logger.warn(["@@@@@@@@@@@@ It is calling the function. Block number: ", Integer.to_string(latest_block_number)])
+    # IO.puts : "@@@@@@@@@@@@ It is calling the function. Block number: ", latest_block_number
 
     do_trigger_fetch(address, latest_block_number)
   end
