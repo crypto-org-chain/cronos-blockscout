@@ -124,6 +124,7 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
 
   defp do_trigger_balance_daily_fetch_query(address, latest_block_number, query) do
     if Repo.one(query) == nil do
+      Logger.warn("@@@@@@ do_trigger_balance_daily_fetch_query")
       GenServer.cast(__MODULE__, {:fetch_and_import_daily_balances, latest_block_number, address})
     end
   end
@@ -145,9 +146,11 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
   defp fetch_and_update(block_number, address, json_rpc_named_arguments) do
     case fetch_balances(block_number, address, json_rpc_named_arguments) do
       {:ok, %{params_list: []}} ->
+        Logger.warn("@@@@@@ fetch_and_update success address: ")
         :ok
 
       {:ok, %{params_list: params_list}} ->
+        Logger.warn("@@@@@@ fetch_and_update success second option address: ")
         address_params = CoinBalanceFetcher.balances_params_to_address_params(params_list)
 
         Chain.import(%{
@@ -156,6 +159,7 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
         })
 
       _ ->
+        Logger.warn("@@@@@@ fetch_and_update error")
         :ok
     end
   end
