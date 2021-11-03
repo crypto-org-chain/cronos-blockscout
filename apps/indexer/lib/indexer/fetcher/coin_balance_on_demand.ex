@@ -93,12 +93,14 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
   ## Implementation
 
   defp do_trigger_fetch(%Address{fetched_coin_balance_block_number: nil} = address, latest_block_number) do
+    Logger.warn("@@@@@@ do_trigger_fetch")
     GenServer.cast(__MODULE__, {:fetch_and_update, latest_block_number, address})
 
     {:stale, 0}
   end
 
   defp do_trigger_fetch(address, latest_block_number) do
+    Logger.warn("@@@@@@ do_trigger_fetch option 2")
     latest_by_day =
       from(
         cbd in CoinBalanceDaily,
@@ -144,6 +146,7 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
   end
 
   defp fetch_and_update(block_number, address, json_rpc_named_arguments) do
+    Logger.warn("@@@@@@ fetch_and_update")
     case fetch_balances(block_number, address, json_rpc_named_arguments) do
       {:ok, %{params_list: []}} ->
         Logger.warn("@@@@@@ fetch_and_update success address: ")
