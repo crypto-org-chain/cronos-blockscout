@@ -158,8 +158,8 @@ defmodule Indexer.Fetcher.CoinBalanceOnDemand do
           broadcast: :on_demand
         })
 
-      _ ->
-        Logger.warn("@@@@@@ fetch_and_update error")
+      {:error, %{errors: errors}} ->
+        Logger.warn("@@@@@@ fetch_and_update error: #{inspect errors}")
         :ok
     end
   end
