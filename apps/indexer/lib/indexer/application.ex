@@ -28,12 +28,19 @@ defmodule Indexer.Application do
         base_children
       end
 
+    extended_children =
+      if Application.get_env(:indexer, Indexer.WebappSupervisor)[:enabled] do
+        Enum.reverse([{Indexer.WebappSupervisor, [%{memory_monitor: memory_monitor_name}]} | children])
+      else
+        children
+      end
+
     opts = [
       # If the `Memory.Monitor` dies, it needs all the `Shrinkable`s to re-register, so restart them.
       strategy: :rest_for_one,
       name: Indexer.Application
     ]
 
-    Supervisor.start_link(children, opts)
+    Supervisor.start_link(extended_children, opts)
   end
 end

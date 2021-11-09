@@ -52,6 +52,7 @@ token_balance_on_demand_fetcher_threshold =
   end
 
 config :indexer, Indexer.Fetcher.TokenBalanceOnDemand, threshold: token_balance_on_demand_fetcher_threshold
+config :indexer, Indexer.WebappSupervisor, enabled: System.get_env("DISABLE_INDEXER") == "true"
 
 # config :indexer, Indexer.Fetcher.ReplacedTransaction.Supervisor, disabled?: true
 if System.get_env("POS_STAKING_CONTRACT") do
