@@ -4,6 +4,9 @@
 <% created_from_address_hash = if from_address_hash(created_from_address), do: "0x" <> Base.encode16(from_address_hash(created_from_address).bytes, case: :lower), else: nil %>
 <section class="address-overview" data-page="token-details" data-page-address-hash="<%= @token.contract_address_hash %>">
   <%= render BlockScoutWeb.Advertisement.TextAdView, "index.html", conn: @conn %>
+  <%= if CustomContractsHelpers.is_in_black_list(Address.checksum(@token.contract_address_hash)) do%>
+    <div class="address-warn">Warning! There are multiple reports that this address is involved in a scam. Please exercise caution when interacting with this address.</div>
+  <% end %>
   <div class="row">
     <div class="card-section col-md-12 col-lg-8 pr-0-md js-ad-dependant-mb-2">
       <div class="card">
