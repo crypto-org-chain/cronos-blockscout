@@ -5,8 +5,8 @@
   <% circles_addresses_list = CustomContractsHelpers.get_custom_addresses_list(:circles_addresses) %>
   <% current_address = "0x" <> Base.encode16(@address.hash.bytes, case: :lower) %>
   <% created_from_address_hash = if from_address_hash(@address), do: "0x" <> Base.encode16(from_address_hash(@address).bytes, case: :lower), else: nil %>
-  <%= if CustomContractsHelpers.is_in_black_list(@address) do%>
-    <div class="address-warn">Warning! There are multiple reports that this address is involved in a scam. Please exercise caution when interacting with this address.</div>
+  <%= if CustomContractsHelpers.is_in_black_list(@address, "") do%>
+    <div class="address-warn">Warning! It was reported that this address is a non-official token deployment. User should be careful when interacting with this address.</div>
   <% end %>
   <div class="row">
     <!-- Address details -->
