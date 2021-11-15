@@ -3,7 +3,7 @@ defmodule Explorer.CustomContractsHelpers do
   Helpers to enable custom contracts themes
   """
 
-  @black_list  [
+  @black_list [
     "0x9C594FaEc60c60b05BAF77a958749eFC78206B02",
     "0xeDD8627e171e4ed11120094633fD82ac7eCe6ebc",
     "0x185F0c2f49BCB1D47D671B0a5Cd3D0B54c5F0692",
@@ -39,16 +39,15 @@ defmodule Explorer.CustomContractsHelpers do
   ]
 
   def is_in_black_list(address, symbol) do
-    result = cond do
-      "#{address}" in @white_list ->
-        false
-      "#{address}" in @black_list ->
-        true
-      "#{symbol}" == "VVS" -> # only official one is false(in the white list)
-        true
-      true ->
-        false
-    end
+    result =
+      cond do
+        "#{address}" in @white_list -> false
+        "#{address}" in @black_list -> true
+        # only official one is false(in the white list)
+        "#{symbol}" == "VVS" -> true
+        true -> false
+      end
+
     result
   end
 
