@@ -602,10 +602,10 @@ msgid "Copy ABI"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:37
-#: lib/block_scout_web/templates/address/overview.html.eex:38
-#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:40
-#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:41
+#: lib/block_scout_web/templates/address/overview.html.eex:40
+#: lib/block_scout_web/templates/address/overview.html.eex:41
+#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:43
+#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:44
 msgid "Copy Address"
 msgstr ""
 
@@ -677,7 +677,7 @@ msgid "Create2"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:99
+#: lib/block_scout_web/templates/address/overview.html.eex:102
 msgid "Created by"
 msgstr ""
 
@@ -726,7 +726,7 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:52
-#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:75
+#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:78
 msgid "Decimals"
 msgstr ""
 
@@ -796,7 +796,7 @@ msgid "Description"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:30
+#: lib/block_scout_web/templates/address/overview.html.eex:33
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:166
 #: lib/block_scout_web/templates/api_docs/_eth_rpc_item.html.eex:127
 msgid "Details"
@@ -909,7 +909,7 @@ msgid "Error: (Awaiting internal transactions for reason)"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:112
+#: lib/block_scout_web/templates/address/overview.html.eex:115
 msgid "Error: Could not determine contract creator."
 msgstr ""
 
@@ -1127,7 +1127,7 @@ msgid "JSON RPC error"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:84
+#: lib/block_scout_web/templates/address/overview.html.eex:87
 msgid "Last Balance Update: Block #"
 msgstr ""
 
@@ -1682,7 +1682,7 @@ msgid "Show QR Code"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:47
+#: lib/block_scout_web/templates/address/overview.html.eex:50
 msgid "Show Validator Info"
 msgstr ""
 
@@ -2083,7 +2083,7 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:10
-#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:33
+#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:36
 msgid "Token Details"
 msgstr ""
 
@@ -2164,7 +2164,7 @@ msgid "Total Difficulty"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:87
+#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:90
 msgid "Total Supply"
 msgstr ""
 
@@ -2331,7 +2331,7 @@ msgid "Validator Data"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:51
+#: lib/block_scout_web/templates/address/overview.html.eex:54
 msgid "Validator Info"
 msgstr ""
 
@@ -2387,7 +2387,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:16
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:20
-#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:67
+#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:70
 msgid "View Contract"
 msgstr ""
 
@@ -2566,7 +2566,7 @@ msgid "all epochs"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:104
+#: lib/block_scout_web/templates/address/overview.html.eex:107
 msgid "at"
 msgstr ""
 

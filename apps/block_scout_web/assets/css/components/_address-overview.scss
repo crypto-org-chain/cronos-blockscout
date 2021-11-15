@@ -84,3 +84,16 @@
 .logs-decoded {
   line-height: 25px!important;
 }
+
+.address-warn {
+  background-color: #f8dad7;
+  border-color: #f6cbc7;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #1e2022;
+  padding: 0.75rem;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 4px 0 rgba(202, 199, 226, 0.5);
+}
