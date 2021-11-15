@@ -32,8 +32,8 @@ defmodule Indexer.Block.Catchup.Fetcher do
   # These are all the *default* values for options.
   # DO NOT use them directly in the code.  Get options from `state`.
 
-  @blocks_batch_size 10
-  @blocks_concurrency 10
+  @blocks_batch_size 4
+  @blocks_concurrency 4
   @sequence_name :block_catchup_sequencer
 
   defstruct blocks_batch_size: @blocks_batch_size,
@@ -114,7 +114,8 @@ defmodule Indexer.Block.Catchup.Fetcher do
               false
 
             _ ->
-              sequence_opts = put_memory_monitor([ranges: missing_ranges, step: -1 * blocks_batch_size], state)
+              step = step(first, last, blocks_batch_size)
+              sequence_opts = put_memory_monitor([ranges: missing_ranges, step: step], state)
               gen_server_opts = [name: @sequence_name]
               {:ok, sequence} = Sequence.start_link(sequence_opts, gen_server_opts)
               Sequence.cap(sequence)
@@ -126,6 +127,10 @@ defmodule Indexer.Block.Catchup.Fetcher do
 
         %{first_block_number: first, last_block_number: last, missing_block_count: missing_block_count, shrunk: shrunk}
     end
+  end
+
+  defp step(first, last, blocks_batch_size) do
+    if first < last, do: blocks_batch_size, else: -1 * blocks_batch_size
   end
 
   @async_import_remaining_block_data_options ~w(address_hash_to_fetched_balance_block_number)a

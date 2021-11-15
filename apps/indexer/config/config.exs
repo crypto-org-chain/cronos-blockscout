@@ -34,7 +34,7 @@ config :indexer,
   metadata_updater_seconds_interval:
     String.to_integer(System.get_env("TOKEN_METADATA_UPDATE_INTERVAL") || "#{2 * 24 * 60 * 60}"),
   # bytes
-  memory_limit: 1 <<< 30,
+  memory_limit: 10 <<< 30,
   first_block: System.get_env("FIRST_BLOCK") || "",
   last_block: System.get_env("LAST_BLOCK") || ""
 
@@ -52,6 +52,7 @@ token_balance_on_demand_fetcher_threshold =
   end
 
 config :indexer, Indexer.Fetcher.TokenBalanceOnDemand, threshold: token_balance_on_demand_fetcher_threshold
+config :indexer, Indexer.WebappSupervisor, enabled: System.get_env("DISABLE_INDEXER") == "true"
 
 # config :indexer, Indexer.Fetcher.ReplacedTransaction.Supervisor, disabled?: true
 if System.get_env("POS_STAKING_CONTRACT") do
