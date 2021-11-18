@@ -604,8 +604,8 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/address/overview.html.eex:40
 #: lib/block_scout_web/templates/address/overview.html.eex:41
-#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:43
-#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:44
+#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:46
+#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:47
 msgid "Copy Address"
 msgstr ""
 
@@ -726,7 +726,7 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:52
-#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:78
+#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:81
 msgid "Decimals"
 msgstr ""
 
@@ -2164,7 +2164,7 @@ msgid "Total Difficulty"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:90
+#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:93
 msgid "Total Supply"
 msgstr ""
 
@@ -2387,7 +2387,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:16
 #: lib/block_scout_web/templates/tokens/instance/overview/_details.html.eex:20
-#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:70
+#: lib/block_scout_web/templates/tokens/overview/_details.html.eex:73
 msgid "View Contract"
 msgstr ""
 

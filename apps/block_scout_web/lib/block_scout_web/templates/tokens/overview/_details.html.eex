@@ -37,6 +37,9 @@
             <% end %>
             <!-- buttons -->
             <span class="overview-title-buttons token float-right <%= if @token.bridged, do: "bridged-tokens-buttons-mobile", else: "" %>">
+                <%= if CustomContractsHelpers.is_official_token(Address.checksum(@token.contract_address_hash)) do%>
+                  <span class="official-token-icon">Official token</span>
+                <% end %>
               <%= render BlockScoutWeb.CommonComponentsView, "_btn_copy.html",
                   additional_classes: ["overview-title-item"],
                   clipboard_text: Address.checksum(@token.contract_address_hash),
