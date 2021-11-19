@@ -35,6 +35,15 @@ defmodule Explorer.CustomContractsHelpers do
     "0x1a8E39ae59e5556B56b76fCBA98d22c9ae557396"
   ]
 
+  @official_token [
+    "0xe44Fd7fCb2b1581822D0c862B68222998a0c299a",
+    "0x062E66477Faf219F25D27dCED647BF57C3107d52",
+    "0xF2001B145b43032AAF5Ee2884e456CCd805F677D",
+    "0x66e428c3f67a68878562e79A0234c1F83c208770",
+    "0xc21223249CA28397B4B6541dfFaEcC539BfF0c59",
+    "0x5C7F8A570d578ED84E63fdFA7b1eE72dEae1AE23"
+  ]
+
   def is_in_black_list(address, symbol) do
     result =
       cond do
@@ -48,8 +57,8 @@ defmodule Explorer.CustomContractsHelpers do
     result
   end
 
-  def is_verified_address(address) do
-    result = "#{address}" in @white_list
+  def is_official_token(address) do
+    result = "#{address}" in @official_token
     result
   end
 
