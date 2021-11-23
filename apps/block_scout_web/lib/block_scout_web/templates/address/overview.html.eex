@@ -33,6 +33,9 @@
             <div class="title-with-label"><%= address_title(@address) %> <%= gettext "Details" %></div>
             <!-- buttons -->
             <span class="overview-title-buttons float-right">
+              <%= if CustomContractsHelpers.is_official_token(@address) do%>
+                <span class="official-token-icon">Official token</span>
+              <% end %>
               <%= render BlockScoutWeb.CommonComponentsView, "_btn_copy.html",
                       id: "tx-raw-input",
                       additional_classes: ["overview-title-item"],
