@@ -3,9 +3,9 @@ defmodule Explorer.CustomContractsHelpers do
   Helpers to enable custom contracts themes
   """
 
-  @address_list_path "config/address_list.json"
+  @address_list_file File.read!("config/address_list.json")
 
-  @address_list_map File.read!(@address_list_path) |> Poison.decode!()
+  @address_list_map @address_list_file |> Poison.decode!()
 
   @official_token_list @address_list_map |> Map.get("official_token")
 
