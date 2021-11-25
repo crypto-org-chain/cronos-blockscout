@@ -602,8 +602,8 @@ msgid "Copy ABI"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:40
-#: lib/block_scout_web/templates/address/overview.html.eex:41
+#: lib/block_scout_web/templates/address/overview.html.eex:43
+#: lib/block_scout_web/templates/address/overview.html.eex:44
 #: lib/block_scout_web/templates/tokens/overview/_details.html.eex:46
 #: lib/block_scout_web/templates/tokens/overview/_details.html.eex:47
 msgid "Copy Address"
@@ -677,7 +677,7 @@ msgid "Create2"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:102
+#: lib/block_scout_web/templates/address/overview.html.eex:105
 msgid "Created by"
 msgstr ""
 
@@ -909,7 +909,7 @@ msgid "Error: (Awaiting internal transactions for reason)"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:115
+#: lib/block_scout_web/templates/address/overview.html.eex:118
 msgid "Error: Could not determine contract creator."
 msgstr ""
 
@@ -1127,7 +1127,7 @@ msgid "JSON RPC error"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:87
+#: lib/block_scout_web/templates/address/overview.html.eex:90
 msgid "Last Balance Update: Block #"
 msgstr ""
 
@@ -1682,7 +1682,7 @@ msgid "Show QR Code"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:50
+#: lib/block_scout_web/templates/address/overview.html.eex:53
 msgid "Show Validator Info"
 msgstr ""
 
@@ -2331,7 +2331,7 @@ msgid "Validator Data"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:54
+#: lib/block_scout_web/templates/address/overview.html.eex:57
 msgid "Validator Info"
 msgstr ""
 
@@ -2566,7 +2566,7 @@ msgid "all epochs"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/address/overview.html.eex:107
+#: lib/block_scout_web/templates/address/overview.html.eex:110
 msgid "at"
 msgstr ""
 
