@@ -140,6 +140,39 @@
             </div>
           </li>
         <% end %>
+        <li class="nav-item dropdown">
+            <a href="#" role="button" id="navbarAPIsDropdown" class="nav-link topnav-nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= if System.get_env("CHAIN_NETWORK") == "mainnet" do %>
+                <%= gettext("Cronos EVM Mainnet") %>
+              <% else %>
+                <%= gettext("Cronos EVM Testnet") %>
+              <% end %>
+            </a>
+            <div class="dropdown-menu" aria-labeledby="navbarTransactionsDropdown">
+              <h6 class="dropdown-header"><%= gettext("Mainnets")%></h6>
+              <%= link(
+                    gettext("Cronos Cosmos Mainnet"),
+                    class: "dropdown-item #{tab_status("graphiql", @conn.request_path)}",
+                    to: System.get_env("COSMOS_EXPLORER_MAINNET_URL") || ""
+                  ) %>
+              <%= link(
+                    gettext("Cronos EVM Mainnet"),
+                    class: "dropdown-item #{tab_status("api-docs", @conn.request_path)}",
+                    to: System.get_env("EVM_EXPLORER_MAINNET_URL") || ""
+                  ) %>
+              <h6 class="dropdown-header"><%= gettext("Testnets")%></h6>
+              <%= link(
+                    gettext("Cronos Cosmos Testnet"),
+                    class: "dropdown-item #{tab_status("graphiql", @conn.request_path)}",
+                    to: System.get_env("COSMOS_EXPLORER_TESTNET_URL") || ""
+                  ) %>
+              <%= link(
+                    gettext("Cronos EVM Testnet"),
+                    class: "dropdown-item #{tab_status("api-docs", @conn.request_path)}",
+                    to: System.get_env("EVM_EXPLORER_TESTNET_URL") || ""
+                  ) %>
+            </div>
+          </li>
         <%= if apps_menu == true || staking_enabled_in_menu do %>
           <li class="nav-item dropdown">
             <a href="#" role="button" id="navbarAppsDropdown" class="nav-link topnav-nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
