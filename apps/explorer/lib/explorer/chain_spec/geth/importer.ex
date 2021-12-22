@@ -9,6 +9,43 @@ defmodule Explorer.ChainSpec.Geth.Importer do
   alias EthereumJSONRPC.Blocks
   alias Explorer.Chain
   alias Explorer.Chain.Hash.Address, as: AddressHash
+  alias Explorer.Chain.Block.{EmissionReward, Range}
+  alias Explorer.Chain.Wei
+  alias Explorer.Repo
+
+  import Ecto.Query
+
+  def init_emission_rewards() do
+    block_reward = Decimal.new(0)
+
+    rewards = [
+      %{
+        block_range: %Range{from: 0, to: :infinity},
+        reward: %Wei{value: block_reward}
+      }
+    ]
+
+    inner_delete_query =
+      from(
+        emission_reward in EmissionReward,
+        # Enforce EmissionReward ShareLocks order (see docs: sharelocks.md)
+        order_by: emission_reward.block_range,
+        lock: "FOR UPDATE"
+      )
+
+    delete_query =
+      from(
+        e in EmissionReward,
+        join: s in subquery(inner_delete_query),
+        on: e.block_range == s.block_range
+      )
+
+    # Enforce EmissionReward ShareLocks order (see docs: sharelocks.md)
+    ordered_rewards = Enum.sort_by(rewards, & &1.block_range)
+
+    {_, nil} = Repo.delete_all(delete_query)
+    {_, nil} = Repo.insert_all(EmissionReward, ordered_rewards)
+  end
 
   def import_genesis_accounts(chain_spec) do
     balance_params =
