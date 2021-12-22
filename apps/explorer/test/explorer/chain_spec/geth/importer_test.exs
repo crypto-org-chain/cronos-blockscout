@@ -25,7 +25,7 @@ defmodule Explorer.ChainSpec.Geth.ImporterTest do
       assert first.block_range == %Range{from: 0, to: :infinity}
     end
   end
-  
+
   describe "genesis_accounts/1" do
     test "parses coin balance and contract code" do
       coin_balances = Importer.genesis_accounts(@genesis)
