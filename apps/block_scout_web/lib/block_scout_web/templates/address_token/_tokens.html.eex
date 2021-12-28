@@ -28,7 +28,7 @@
     <% end %>
   </td>
   <td class="stakes-td">
-    <%= @token.type  %>
+    <%= transfer_erc20_to_crc20(@token.type)  %>
   </td>
   <td class="stakes-td">
     <%= format_according_to_decimals(@token_balance.value, @token.decimals)  %>
