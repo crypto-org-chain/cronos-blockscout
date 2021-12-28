@@ -5,6 +5,15 @@ defmodule BlockScoutWeb.CurrencyHelpers do
 
   alias BlockScoutWeb.CldrHelper.Number
 
+  @doc """
+  Transfer "ERC-20" to "CRC-20".
+
+  ## Examples
+
+      iex> BlockScoutWeb.CurrencyHelpers.transfer_erc20_to_crc20("ERC-20")
+      "CRC-20"
+  """
+  @spec transfer_erc20_to_crc20(String.t()) :: String.t()
   def transfer_erc20_to_crc20(value) do
     case value do
       "ERC-20" -> "CRC-20"
