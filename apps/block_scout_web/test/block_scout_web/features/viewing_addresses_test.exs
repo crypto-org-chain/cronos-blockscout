@@ -390,7 +390,7 @@ defmodule BlockScoutWeb.ViewingAddressesTest do
       |> AddressPage.fill_balance_dropdown_search("T2")
       |> assert_has(AddressPage.token_balance(count: 1))
       |> assert_has(AddressPage.token_type(count: 1))
-      |> assert_has(AddressPage.token_type_count(type: "ERC-20", text: "1"))
+      |> assert_has(AddressPage.token_type_count(type: "CRC-20", text: "1"))
     end
 
     test "reset token balances filter when dropdown closes", %{session: session, lincoln: lincoln} do
