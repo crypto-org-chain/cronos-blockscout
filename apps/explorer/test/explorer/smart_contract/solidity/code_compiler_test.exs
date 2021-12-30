@@ -14,7 +14,9 @@ defmodule Explorer.SmartContract.Solidity.CodeCompilerTest do
 
   describe "run/2" do
     setup do
-      {:ok, contract_code_info: Factory.contract_code_info()}
+      {:ok,
+       contract_code_info: Factory.contract_code_info(),
+       contract_code_info_modern_compilator: Factory.contract_code_info_modern_compilator()}
     end
 
     test "compiles the latest solidity version", %{contract_code_info: contract_code_info} do
@@ -35,14 +37,16 @@ defmodule Explorer.SmartContract.Solidity.CodeCompilerTest do
               }} = response
     end
 
-    test "compiles a optimized smart contract", %{contract_code_info: contract_code_info} do
+    test "compiles a optimized smart contract", %{
+      contract_code_info_modern_compilator: contract_code_info_modern_compilator
+    } do
       optimize = true
 
       response =
         CodeCompiler.run(
-          name: contract_code_info.name,
-          compiler_version: contract_code_info.version,
-          code: contract_code_info.source_code,
+          name: contract_code_info_modern_compilator.name,
+          compiler_version: contract_code_info_modern_compilator.version,
+          code: contract_code_info_modern_compilator.source_code,
           optimize: optimize,
           evm_version: "byzantium"
         )
@@ -55,14 +59,16 @@ defmodule Explorer.SmartContract.Solidity.CodeCompilerTest do
               }} = response
     end
 
-    test "compiles smart contract with default evm version", %{contract_code_info: contract_code_info} do
+    test "compiles smart contract with default evm version", %{
+      contract_code_info_modern_compilator: contract_code_info_modern_compilator
+    } do
       optimize = true
 
       response =
         CodeCompiler.run(
-          name: contract_code_info.name,
-          compiler_version: contract_code_info.version,
-          code: contract_code_info.source_code,
+          name: contract_code_info_modern_compilator.name,
+          compiler_version: contract_code_info_modern_compilator.version,
+          code: contract_code_info_modern_compilator.source_code,
           optimize: optimize,
           evm_version: "default"
         )
