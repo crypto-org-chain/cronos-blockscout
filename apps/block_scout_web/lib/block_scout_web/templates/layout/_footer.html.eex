@@ -51,8 +51,8 @@
       <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
         <h3><%= gettext("Resources") %></h3>
         <ul>
-          <li><a href="https://cronos.crypto.org/" target="_blank" rel="noreferrer" class="footer-link"><%= gettext("Cronos Website") %></a></li>
-          <li><a href="https://cronos.crypto.org/docs" target="_blank" rel="noreferrer" class="footer-link"><%= gettext("Documentation") %></a></li>
+          <li><a href="https://cronos.org/" target="_blank" rel="noreferrer" class="footer-link"><%= gettext("Cronos Website") %></a></li>
+          <li><a href="https://cronos.org/docs" target="_blank" rel="noreferrer" class="footer-link"><%= gettext("Documentation") %></a></li>
         </ul>
       </div>
 

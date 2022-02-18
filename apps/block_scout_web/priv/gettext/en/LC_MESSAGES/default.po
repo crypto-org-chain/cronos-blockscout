@@ -838,12 +838,6 @@ msgid "Cronos Website"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/chain/_metatags.html.eex:2
-#: lib/block_scout_web/templates/chain/_metatags.html.eex:8 lib/block_scout_web/templates/chain/_metatags.html.eex:16
-msgid "Cronos | Crypto.org EVM Chain | Explorer"
-msgstr ""
-
-#, elixir-format
 #: lib/block_scout_web/templates/api_docs/_action_tile.html.eex:146
 #: lib/block_scout_web/templates/api_docs/_eth_rpc_item.html.eex:116
 msgid "Curl"
@@ -3249,4 +3243,10 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/address_token/overview.html.eex:1
 msgid "CRO"
+msgstr ""
+
+#, elixir-format, fuzzy
+#: lib/block_scout_web/templates/chain/_metatags.html.eex:2
+#: lib/block_scout_web/templates/chain/_metatags.html.eex:8 lib/block_scout_web/templates/chain/_metatags.html.eex:16
+msgid "Cronos | cronos.org EVM Chain | Explorer"
 msgstr ""
