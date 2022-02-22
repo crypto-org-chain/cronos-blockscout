@@ -1,6 +1,8 @@
 defmodule Explorer.Chain.LogTest do
   use Explorer.DataCase
 
+  import Mox
+
   alias Ecto.Changeset
   alias Explorer.Chain.{Log, SmartContract}
   alias Explorer.Repo
@@ -99,6 +101,40 @@ defmodule Explorer.Chain.LogTest do
           data: data
         )
 
+      blockchain_get_code_mock()
+
+      EthereumJSONRPC.Mox
+      |> expect(
+        :json_rpc,
+        fn %{
+             id: _id,
+             method: "eth_getStorageAt",
+             params: [
+               _,
+               "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+               "latest"
+             ]
+           },
+           _options ->
+          {:ok, "0x0000000000000000000000000000000000000000000000000000000000000000"}
+        end
+      )
+      |> expect(
+        :json_rpc,
+        fn %{
+             id: _id,
+             method: "eth_getStorageAt",
+             params: [
+               _,
+               "0xa3f0ad74e5423aebfd80d3ef4346578335a9a72aeaee59ff6cb3582b35133d50",
+               "latest"
+             ]
+           },
+           _options ->
+          {:ok, "0x0000000000000000000000000000000000000000000000000000000000000000"}
+        end
+      )
+
       assert Log.decode(log, transaction) ==
                {:ok, "eb9b3c4c", "WantsPets(string indexed _from_human, uint256 _number, bool indexed _belly)",
                 [
@@ -166,5 +202,15 @@ defmodule Explorer.Chain.LogTest do
                    ]}
                 ]}
     end
+  end
+
+  defp blockchain_get_code_mock do
+    expect(
+      EthereumJSONRPC.Mox,
+      :json_rpc,
+      fn [%{id: id, method: "eth_getCode", params: [_, _]}], _options ->
+        {:ok, [%{id: id, jsonrpc: "2.0", result: "0x0"}]}
+      end
+    )
   end
 end

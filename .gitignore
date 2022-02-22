@@ -45,3 +45,4 @@ screenshots/
 
 # ide
 .vscode
+/docker-compose/postgres-data

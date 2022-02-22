@@ -13,7 +13,7 @@ config :explorer,
   token_functions_reader_max_retries: 3,
   allowed_evm_versions:
     System.get_env("ALLOWED_EVM_VERSIONS") ||
-      "homestead,tangerineWhistle,spuriousDragon,byzantium,constantinople,petersburg,istanbul,default",
+      "homestead,tangerineWhistle,spuriousDragon,byzantium,constantinople,petersburg,istanbul,berlin,london,default",
   include_uncles_in_average_block_time:
     if(System.get_env("UNCLES_IN_AVERAGE_BLOCK_TIME") == "true", do: true, else: false),
   healthy_blocks_period: System.get_env("HEALTHY_BLOCKS_PERIOD") || :timer.minutes(5),
@@ -21,8 +21,7 @@ config :explorer,
     if(System.get_env("DISABLE_WEBAPP") != "true",
       do: Explorer.Chain.Events.SimpleSender,
       else: Explorer.Chain.Events.DBSender
-    ),
-  enabled_1559_support: System.get_env("ENABLE_1559_SUPPORT") == "true"
+    )
 
 config :explorer, Explorer.Counters.AverageBlockTime,
   enabled: true,
@@ -30,7 +29,7 @@ config :explorer, Explorer.Counters.AverageBlockTime,
 
 config :explorer, Explorer.Chain.Events.Listener,
   enabled:
-    if(System.get_env("DISABLE_WEBAPP") == nil && System.get_env("DISABLE_INDEXER") == nil,
+    if(System.get_env("DISABLE_WEBAPP") == "true" && System.get_env("DISABLE_INDEXER") == "true",
       do: false,
       else: true
     )
@@ -140,6 +139,8 @@ config :explorer, Explorer.KnownTokens, enabled: System.get_env("DISABLE_KNOWN_T
 config :explorer, Explorer.Integrations.EctoLogger, query_time_ms_threshold: :timer.seconds(2)
 
 config :explorer, Explorer.Market.History.Cataloger, enabled: System.get_env("DISABLE_INDEXER") != "true"
+
+config :explorer, Explorer.Chain.Cache.MinMissingBlockNumber, enabled: System.get_env("DISABLE_WRITE_API") != "true"
 
 txs_stats_init_lag =
   System.get_env("TXS_HISTORIAN_INIT_LAG", "0")

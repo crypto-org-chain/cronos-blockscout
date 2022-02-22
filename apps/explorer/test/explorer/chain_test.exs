@@ -27,7 +27,7 @@ defmodule Explorer.ChainTest do
     Wei
   }
 
-  alias Explorer.Chain
+  alias Explorer.{Chain, Etherscan}
   alias Explorer.Chain.InternalTransaction.Type
 
   alias Explorer.Chain.Supply.ProofOfAuthority
@@ -1413,11 +1413,11 @@ defmodule Explorer.ChainTest do
         insert(:address, fetched_coin_balance: index)
       end
 
-      assert "10" = Decimal.to_string(Chain.fetch_sum_coin_total_supply())
+      assert "10" = Decimal.to_string(Etherscan.fetch_sum_coin_total_supply())
     end
 
     test "fetches coin total supply when there are no blocks" do
-      assert 0 = Chain.fetch_sum_coin_total_supply()
+      assert 0 = Etherscan.fetch_sum_coin_total_supply()
     end
   end
 
@@ -2710,7 +2710,7 @@ defmodule Explorer.ChainTest do
           transaction_index: transaction.index
         )
 
-      %InternalTransaction{transaction_hash: second_transaction_hash, index: second_index} =
+      %InternalTransaction{transaction_hash: transaction_hash_1, index: index_1} =
         insert(:internal_transaction,
           transaction: transaction,
           index: 1,
@@ -2720,13 +2720,23 @@ defmodule Explorer.ChainTest do
           transaction_index: transaction.index
         )
 
+      %InternalTransaction{transaction_hash: transaction_hash_2, index: index_2} =
+        insert(:internal_transaction,
+          transaction: transaction,
+          index: 2,
+          block_number: transaction.block_number,
+          block_hash: transaction.block_hash,
+          block_index: 2,
+          transaction_index: transaction.index
+        )
+
       result =
         transaction.hash
         |> Chain.transaction_to_internal_transactions()
         |> Enum.map(&{&1.transaction_hash, &1.index})
 
       # excluding of internal transactions with type=call and index=0
-      assert [{second_transaction_hash, second_index}] == result
+      assert [{transaction_hash_1, index_1}, {transaction_hash_2, index_2}] == result
     end
 
     test "pages by index" do
@@ -3049,11 +3059,11 @@ defmodule Explorer.ChainTest do
     end
   end
 
-  describe "transaction_to_logs/2" do
+  describe "transaction_to_logs/3" do
     test "without logs" do
       transaction = insert(:transaction)
 
-      assert [] = Chain.transaction_to_logs(transaction.hash)
+      assert [] = Chain.transaction_to_logs(transaction.hash, false)
     end
 
     test "with logs" do
@@ -3065,7 +3075,8 @@ defmodule Explorer.ChainTest do
       %Log{transaction_hash: transaction_hash, index: index} =
         insert(:log, transaction: transaction, block: transaction.block, block_number: transaction.block_number)
 
-      assert [%Log{transaction_hash: ^transaction_hash, index: ^index}] = Chain.transaction_to_logs(transaction.hash)
+      assert [%Log{transaction_hash: ^transaction_hash, index: ^index}] =
+               Chain.transaction_to_logs(transaction.hash, false)
     end
 
     test "with logs can be paginated" do
@@ -3096,7 +3107,7 @@ defmodule Explorer.ChainTest do
 
       assert second_page_indexes ==
                transaction.hash
-               |> Chain.transaction_to_logs(paging_options: %PagingOptions{key: {log.index}, page_size: 50})
+               |> Chain.transaction_to_logs(false, paging_options: %PagingOptions{key: {log.index}, page_size: 50})
                |> Enum.map(& &1.index)
     end
 
@@ -3111,6 +3122,7 @@ defmodule Explorer.ChainTest do
       assert [%Log{address: %Address{}, transaction: %Transaction{}}] =
                Chain.transaction_to_logs(
                  transaction.hash,
+                 false,
                  necessity_by_association: %{
                    address: :optional,
                    transaction: :optional
@@ -3122,7 +3134,7 @@ defmodule Explorer.ChainTest do
                  address: %Ecto.Association.NotLoaded{},
                  transaction: %Ecto.Association.NotLoaded{}
                }
-             ] = Chain.transaction_to_logs(transaction.hash)
+             ] = Chain.transaction_to_logs(transaction.hash, false)
     end
   end
 
@@ -4672,7 +4684,7 @@ defmodule Explorer.ChainTest do
     end
   end
 
-  describe "fetch_token_holders_from_token_hash/2" do
+  describe "fetch_token_holders_from_token_hash/3" do
     test "returns the token holders" do
       %Token{contract_address_hash: contract_address_hash} = insert(:token)
       address_a = insert(:address)
@@ -4695,7 +4707,7 @@ defmodule Explorer.ChainTest do
 
       token_holders_count =
         contract_address_hash
-        |> Chain.fetch_token_holders_from_token_hash([])
+        |> Chain.fetch_token_holders_from_token_hash(false, [])
         |> Enum.count()
 
       assert token_holders_count == 2
@@ -5332,40 +5344,6 @@ defmodule Explorer.ChainTest do
     end
   end
 
-  describe "extract_db_name/1" do
-    test "extracts correct db name" do
-      db_url = "postgresql://viktor:@localhost:5432/blockscout-dev-1"
-      assert Chain.extract_db_name(db_url) == "blockscout-dev-1"
-    end
-
-    test "returns empty db name" do
-      db_url = ""
-      assert Chain.extract_db_name(db_url) == ""
-    end
-
-    test "returns nil db name" do
-      db_url = nil
-      assert Chain.extract_db_name(db_url) == ""
-    end
-  end
-
-  describe "extract_db_host/1" do
-    test "extracts correct db host" do
-      db_url = "postgresql://viktor:@localhost:5432/blockscout-dev-1"
-      assert Chain.extract_db_host(db_url) == "localhost"
-    end
-
-    test "returns empty db name" do
-      db_url = ""
-      assert Chain.extract_db_host(db_url) == ""
-    end
-
-    test "returns nil db name" do
-      db_url = nil
-      assert Chain.extract_db_host(db_url) == ""
-    end
-  end
-
   describe "fetch_first_trace/2" do
     test "fetched first trace", %{
       json_rpc_named_arguments: json_rpc_named_arguments
@@ -5630,6 +5608,39 @@ defmodule Explorer.ChainTest do
 
     test "combine_proxy_implementation_abi/2 returns [] abi for unverified proxy" do
       proxy_contract_address = insert(:contract_address)
+
+      EthereumJSONRPC.Mox
+      |> expect(
+        :json_rpc,
+        fn %{
+             id: _id,
+             method: "eth_getStorageAt",
+             params: [
+               _,
+               "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+               "latest"
+             ]
+           },
+           _options ->
+          {:ok, "0x0000000000000000000000000000000000000000000000000000000000000000"}
+        end
+      )
+      |> expect(
+        :json_rpc,
+        fn %{
+             id: _id,
+             method: "eth_getStorageAt",
+             params: [
+               _,
+               "0xa3f0ad74e5423aebfd80d3ef4346578335a9a72aeaee59ff6cb3582b35133d50",
+               "latest"
+             ]
+           },
+           _options ->
+          {:ok, "0x0000000000000000000000000000000000000000000000000000000000000000"}
+        end
+      )
+
       assert Chain.combine_proxy_implementation_abi(proxy_contract_address, []) == []
     end
 
@@ -5679,6 +5690,39 @@ defmodule Explorer.ChainTest do
 
     test "get_implementation_abi_from_proxy/2 returns [] abi for unverified proxy" do
       proxy_contract_address = insert(:contract_address)
+
+      EthereumJSONRPC.Mox
+      |> expect(
+        :json_rpc,
+        fn %{
+             id: _id,
+             method: "eth_getStorageAt",
+             params: [
+               _,
+               "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+               "latest"
+             ]
+           },
+           _options ->
+          {:ok, "0x0000000000000000000000000000000000000000000000000000000000000000"}
+        end
+      )
+      |> expect(
+        :json_rpc,
+        fn %{
+             id: _id,
+             method: "eth_getStorageAt",
+             params: [
+               _,
+               "0xa3f0ad74e5423aebfd80d3ef4346578335a9a72aeaee59ff6cb3582b35133d50",
+               "latest"
+             ]
+           },
+           _options ->
+          {:ok, "0x0000000000000000000000000000000000000000000000000000000000000000"}
+        end
+      )
+
       assert Chain.combine_proxy_implementation_abi(proxy_contract_address, []) == []
     end
 
@@ -5714,6 +5758,38 @@ defmodule Explorer.ChainTest do
       )
 
       implementation_abi = Chain.get_implementation_abi_from_proxy(proxy_contract_address.hash, @proxy_abi)
+
+      assert implementation_abi == @implementation_abi
+    end
+
+    test "get_implementation_abi_from_proxy/2 returns implementation abi in case of EIP-1967 proxy pattern" do
+      proxy_contract_address = insert(:contract_address)
+      insert(:smart_contract, address_hash: proxy_contract_address.hash, abi: [])
+
+      implementation_contract_address = insert(:contract_address)
+      insert(:smart_contract, address_hash: implementation_contract_address.hash, abi: @implementation_abi)
+
+      implementation_contract_address_hash_string =
+        Base.encode16(implementation_contract_address.hash.bytes, case: :lower)
+
+      expect(
+        EthereumJSONRPC.Mox,
+        :json_rpc,
+        fn %{
+             id: _id,
+             method: "eth_getStorageAt",
+             params: [
+               _,
+               "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc",
+               "latest"
+             ]
+           },
+           _options ->
+          {:ok, "0x000000000000000000000000" <> implementation_contract_address_hash_string}
+        end
+      )
+
+      implementation_abi = Chain.get_implementation_abi_from_proxy(proxy_contract_address.hash, [])
 
       assert implementation_abi == @implementation_abi
     end
