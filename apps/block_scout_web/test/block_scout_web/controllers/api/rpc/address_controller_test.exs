@@ -9,6 +9,7 @@ defmodule BlockScoutWeb.API.RPC.AddressControllerTest do
   alias Explorer.Counters.{AddressesCounter, AverageBlockTime}
   alias Indexer.Fetcher.CoinBalanceOnDemand
   alias Explorer.Repo
+  alias Explorer.Chain.Block.EmissionReward
 
   setup :set_mox_global
   setup :verify_on_exit!
@@ -2672,6 +2673,8 @@ defmodule BlockScoutWeb.API.RPC.AddressControllerTest do
     end
 
     test "returns all the required fields", %{conn: conn} do
+      Repo.delete_all(EmissionReward)
+
       %{block_range: range} = insert(:emission_reward)
 
       block = insert(:block, number: Enum.random(Range.new(range.from, range.to)))
@@ -2705,6 +2708,8 @@ defmodule BlockScoutWeb.API.RPC.AddressControllerTest do
     end
 
     test "with a block with one transaction", %{conn: conn} do
+      Repo.delete_all(EmissionReward)
+
       %{block_range: range} = insert(:emission_reward)
 
       block = insert(:block, number: Enum.random(Range.new(range.from, range.to)))
@@ -2738,6 +2743,8 @@ defmodule BlockScoutWeb.API.RPC.AddressControllerTest do
     end
 
     test "with pagination options", %{conn: conn} do
+      Repo.delete_all(EmissionReward)
+
       %{block_range: range} = insert(:emission_reward)
 
       block_numbers = Range.new(range.from, range.to)
