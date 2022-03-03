@@ -35,7 +35,6 @@ defmodule Explorer.ChainTest do
   alias Explorer.Counters.AddressesCounter
   alias Explorer.Chain.Block.EmissionReward
 
-
   doctest Explorer.Chain
 
   setup :set_mox_global

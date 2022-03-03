@@ -52,18 +52,6 @@ defmodule Explorer.Repo.ConfigHelperTest do
       assert result[:database] == "test_database"
     end
 
-    test "get hostname(with '.') instead of ip" do
-      database_url = "postgresql://test._user.name:@cooltesthost:7777/test_database"
-
-      result = ConfigHelper.get_db_config(%{url: database_url, env_func: fn _ -> nil end})
-
-      assert result[:username] == "test._user.name"
-      assert result[:password] == ""
-      assert result[:hostname] == "cooltesthost"
-      assert result[:port] == "7777"
-      assert result[:database] == "test_database"
-    end
-
     test "overwrite postgrex vars param with database url" do
       database_url = "postgresql://test_username:@127.8.8.1:7777/test_database"
 
