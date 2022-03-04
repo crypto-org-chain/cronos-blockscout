@@ -1,0 +1,25 @@
+on:
+  schedule:
+  - cron:  "30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    - name: sync repo to breanch
+      uses: repo-sync/github-sync@v2
+      with:
+        source_repo: https://github.com/blockscout/blockscout
+        source_branch: master
+        destination_branch: sync-upstream
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: create pull request
+      uses: repo-sync/pull-request@v2
+      with:
+        source_branch: sync-upstream
+        destination_branch: master
+        github_token: ${{ secrets.GITHUB_TOKEN }}
