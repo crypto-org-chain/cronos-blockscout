@@ -1,6 +1,8 @@
+name: repo-sync
+
 on:
   schedule:
-  - cron:  "30 * * * *"
+  - cron:  "0 8 * * *"
   workflow_dispatch:
 
 jobs:
