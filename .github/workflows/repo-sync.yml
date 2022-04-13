@@ -25,7 +25,7 @@ jobs:
         source_branch: sync-upstream
         destination_branch: master
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_title: "Pulling upstream into master"
+        pr_title: "Sync with upstream"
         pr_body: ":crown: *An automated PR*"
         pr_reviewer: "crypto-facs,WilliamXieCrypto,mofhusseini"
         pr_assignee: "crypto-facs,WilliamXieCrypto,mofhusseini"
