@@ -16,10 +16,15 @@ jobs:
         source_repo: https://github.com/blockscout/blockscout
         source_branch: master
         destination_branch: sync-upstream
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.REPO_SYNC_PAT }}
     - name: create pull request
       uses: repo-sync/pull-request@v2
       with:
         source_branch: sync-upstream
         destination_branch: master
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        pr_title: "Pulling ${{ github.ref }} into master"
+        pr_body: ":crown: *An automated PR*"
+        pr_reviewer: "crypto-facs,WilliamXieCrypto,mofhusseini"
+        pr_assignee: "crypto-facs,WilliamXieCrypto,mofhusseini"
+        pr_label: "auto-pr"
