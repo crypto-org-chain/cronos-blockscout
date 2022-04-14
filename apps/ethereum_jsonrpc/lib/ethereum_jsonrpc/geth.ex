@@ -12,7 +12,6 @@ defmodule EthereumJSONRPC.Geth do
 
   @doc """
   Block reward contract beneficiary fetching is not supported currently for Geth.
-
   To signal to the caller that fetching is not supported, `:ignore` is returned.
   """
   @impl EthereumJSONRPC.Variant
@@ -45,7 +44,6 @@ defmodule EthereumJSONRPC.Geth do
 
   @doc """
   Internal transaction fetching for entire blocks is not currently supported for Geth.
-
   To signal to the caller that fetching is not supported, `:ignore` is returned.
   """
   @impl EthereumJSONRPC.Variant
@@ -89,7 +87,7 @@ defmodule EthereumJSONRPC.Geth do
   @tracer File.read!(@tracer_path)
 
   defp debug_trace_transaction_request(%{id: id, hash_data: hash_data}) do
-    request(%{id: id, method: "debug_traceTransaction", params: [hash_data, %{tracer: @tracer}]})
+    request(%{id: id, method: "debug_traceTransaction", params: [hash_data, %{timeout: "20s", tracer: @tracer}]})
   end
 
   defp debug_trace_transaction_responses_to_internal_transactions_params(

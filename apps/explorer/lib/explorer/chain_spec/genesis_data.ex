@@ -58,6 +58,8 @@ defmodule Explorer.ChainSpec.GenesisData do
   def fetch_genesis_data do
     path = Application.get_env(:explorer, __MODULE__)[:chain_spec_path]
 
+    GethImporter.init_emission_rewards()
+
     if path do
       json_rpc_named_arguments = Application.fetch_env!(:indexer, :json_rpc_named_arguments)
       variant = Keyword.fetch!(json_rpc_named_arguments, :variant)

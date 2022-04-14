@@ -38,8 +38,8 @@ $grays: map-merge(
   $grays
 );
 
-$blue: #4786ff !default;
-$indigo: #5b389f !default;
+$blue: #1a90ff !default;
+$indigo: #0c1526 !default;
 $purple: #997fdc !default;
 $pink: #e83e8c !default;
 $lilac: #b38dc9 !default;
@@ -71,12 +71,12 @@ $colors: map-merge(
   $colors
 );
 
-$primary: $indigo !default;
-$dark-primary: #9b62ff !default;
-$dark-primary-alternate: #9b62ff !default;
-$secondary: #7dd79f !default;
-$dark-secondary: #87e1a9 !default;
-$tertiary: $purple !default;
+$primary: #0c1526;
+$secondary: $primary;
+$tertiary: #bf9cff;
+$dark-primary: #01040a !default;
+$dark-primary-alternate: #01040a !default;
+$dark-secondary: #156abb !default;
 $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
