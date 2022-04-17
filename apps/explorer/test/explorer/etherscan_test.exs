@@ -5,6 +5,7 @@ defmodule Explorer.EtherscanTest do
 
   alias Explorer.{Etherscan, Chain}
   alias Explorer.Chain.Transaction
+  alias Explorer.Chain.Block.EmissionReward
 
   describe "list_transactions/2" do
     test "with empty db" do
@@ -1468,6 +1469,8 @@ defmodule Explorer.EtherscanTest do
 
   describe "list_blocks/1" do
     test "it returns all required fields" do
+      Repo.delete_all(EmissionReward)
+
       %{block_range: range} = insert(:emission_reward)
 
       block = insert(:block, number: Enum.random(Range.new(range.from, range.to)))
@@ -1490,6 +1493,8 @@ defmodule Explorer.EtherscanTest do
     end
 
     test "with block containing multiple transactions" do
+      Repo.delete_all(EmissionReward)
+
       %{block_range: range} = insert(:emission_reward)
 
       block = insert(:block, number: Enum.random(Range.new(range.from, range.to)))
@@ -1505,6 +1510,8 @@ defmodule Explorer.EtherscanTest do
     end
 
     test "with block without transactions" do
+      Repo.delete_all(EmissionReward)
+
       %{block_range: range} = insert(:emission_reward)
 
       block = insert(:block, number: Enum.random(Range.new(range.from, range.to)))
@@ -1523,6 +1530,8 @@ defmodule Explorer.EtherscanTest do
     end
 
     test "with multiple blocks" do
+      Repo.delete_all(EmissionReward)
+
       %{block_range: range} = insert(:emission_reward)
 
       block_numbers = Range.new(range.from, range.to)
@@ -1549,6 +1558,8 @@ defmodule Explorer.EtherscanTest do
     end
 
     test "with pagination options" do
+      Repo.delete_all(EmissionReward)
+
       %{block_range: range} = insert(:emission_reward)
 
       block_numbers = Range.new(range.from, range.to)

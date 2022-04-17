@@ -34,6 +34,7 @@ defmodule Explorer.ChainTest do
   alias Explorer.Chain.Supply.ProofOfAuthority
   alias Explorer.Counters.AddressesWithBalanceCounter
   alias Explorer.Counters.AddressesCounter
+  alias Explorer.Chain.Block.EmissionReward
 
   doctest Explorer.Chain
 
@@ -3278,6 +3279,8 @@ defmodule Explorer.ChainTest do
 
   describe "block_reward/1" do
     setup do
+      Repo.delete_all(EmissionReward)
+
       %{block_range: range} = emission_reward = insert(:emission_reward)
 
       block = insert(:block, number: Enum.random(Range.new(range.from, range.to)))
