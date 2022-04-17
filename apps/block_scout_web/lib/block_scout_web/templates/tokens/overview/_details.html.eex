@@ -162,7 +162,7 @@
               <%= gettext("Token type") %>
             </dt>
             <dd class="col-sm-8 col-md-8 col-lg-9">
-              <%= @token.type %>
+              <%= transfer_erc20_to_crc20(@token.type) %>
             </dd>
           </dl>
         </div>
