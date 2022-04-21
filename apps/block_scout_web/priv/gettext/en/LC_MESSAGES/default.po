@@ -798,11 +798,6 @@ msgid "Copy Value"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_footer.html.eex:23
-msgid "Copyright © 2021 CRO Protocol Labs. All rights reserved."
-msgstr ""
-
-#, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:25
 msgid "Create"
 msgstr ""
@@ -3285,7 +3280,7 @@ msgstr ""
 msgid "Error in internal transactions"
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/block_scout_web/templates/block/_tile.html.eex:40
 #: lib/block_scout_web/templates/chain/_block.html.eex:16
 msgid "Block Proposer"
@@ -3330,4 +3325,9 @@ msgstr ""
 #: lib/block_scout_web/views/block_view.ex:20 lib/block_scout_web/views/wei_helpers.ex:76
 #: lib/block_scout_web/views/wei_helpers.ex:77
 msgid "basetcro"
+msgstr ""
+
+#, elixir-format, fuzzy
+#: lib/block_scout_web/templates/layout/_footer.html.eex:23
+msgid "Copyright © 2022 CRO Protocol Labs. All rights reserved."
 msgstr ""

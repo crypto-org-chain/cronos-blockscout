@@ -20,6 +20,7 @@ $dashboard-banner-chart-axis-font-color-alt: #333;
   @include gradient-container();
   margin-bottom: 3rem;
   overflow: hidden;
+  margin-top: 0;
   padding: 0;
   position: relative;
   height: 264px;

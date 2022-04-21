@@ -7,3 +7,11 @@ $alert-danger-color: #ff7986 !default;
     border-color: $alert-danger-border-color;
     color: $alert-danger-color;
 }
+
+.dry-run-alert {
+    margin-top: -35px;
+    background-color: rgba(247,99,65,.2);
+    color: #f76341;
+    font-weight: 700;
+    font-size: 13px;
+}
