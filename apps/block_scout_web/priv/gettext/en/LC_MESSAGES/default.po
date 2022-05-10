@@ -25,7 +25,7 @@ msgid " - minimal bytecode implementation that delegates all calls to a known ad
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_footer.html.eex:24
+#: lib/block_scout_web/templates/layout/_footer.html.eex:27
 msgid " Powered by Blockscout"
 msgstr ""
 
@@ -164,7 +164,7 @@ msgid "APY & Predicted Reward"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_footer.html.eex:48
+#: lib/block_scout_web/templates/layout/_footer.html.eex:51
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:120
 msgid "Accounts"
 msgstr ""
@@ -404,7 +404,7 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:176
-#: lib/block_scout_web/templates/layout/_footer.html.eex:46 lib/block_scout_web/templates/layout/_topnav.html.eex:34
+#: lib/block_scout_web/templates/layout/_footer.html.eex:49 lib/block_scout_web/templates/layout/_topnav.html.eex:34
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:38
 msgid "Blocks"
 msgstr ""
@@ -798,11 +798,6 @@ msgid "Copy Value"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_footer.html.eex:23
-msgid "Copyright © 2021 CRO Protocol Labs. All rights reserved."
-msgstr ""
-
-#, elixir-format
 #: lib/block_scout_web/views/internal_transaction_view.ex:25
 msgid "Create"
 msgstr ""
@@ -818,7 +813,7 @@ msgid "Creator"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_footer.html.eex:56
+#: lib/block_scout_web/templates/layout/_footer.html.eex:59
 msgid "Cronos Website"
 msgstr ""
 
@@ -961,7 +956,7 @@ msgid "Displaying the init data provided of the creating transaction."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_footer.html.eex:57
+#: lib/block_scout_web/templates/layout/_footer.html.eex:60
 msgid "Documentation"
 msgstr ""
 
@@ -1118,7 +1113,7 @@ msgid "Expand"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_footer.html.eex:43
+#: lib/block_scout_web/templates/layout/_footer.html.eex:46
 msgid "Explorer"
 msgstr ""
 
@@ -1238,7 +1233,7 @@ msgid "Genesis Block"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_footer.html.eex:27
+#: lib/block_scout_web/templates/layout/_footer.html.eex:30
 msgid "Github"
 msgstr ""
 
@@ -1952,7 +1947,7 @@ msgid "Reset"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_footer.html.eex:54
+#: lib/block_scout_web/templates/layout/_footer.html.eex:57
 msgid "Resources"
 msgstr ""
 
@@ -2241,7 +2236,7 @@ msgid "Target Pool"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_footer.html.eex:33
+#: lib/block_scout_web/templates/layout/_footer.html.eex:36
 msgid "Telegram"
 msgstr ""
 
@@ -2606,7 +2601,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/address/_tabs.html.eex:21
 #: lib/block_scout_web/templates/address/overview.html.eex:198 lib/block_scout_web/templates/address_token/overview.html.eex:58
-#: lib/block_scout_web/templates/address_token_transfer/index.html.eex:13 lib/block_scout_web/templates/layout/_footer.html.eex:49
+#: lib/block_scout_web/templates/address_token_transfer/index.html.eex:13 lib/block_scout_web/templates/layout/_footer.html.eex:52
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:79 lib/block_scout_web/templates/layout/_topnav.html.eex:111
 #: lib/block_scout_web/templates/tokens/index.html.eex:10 lib/block_scout_web/views/address_view.ex:354
 msgid "Tokens"
@@ -2750,7 +2745,7 @@ msgstr ""
 #: lib/block_scout_web/templates/address/overview.html.eex:209 lib/block_scout_web/templates/address/overview.html.eex:215
 #: lib/block_scout_web/templates/address/overview.html.eex:223 lib/block_scout_web/templates/address_transaction/index.html.eex:13
 #: lib/block_scout_web/templates/block/overview.html.eex:79 lib/block_scout_web/templates/block_transaction/index.html.eex:10
-#: lib/block_scout_web/templates/chain/show.html.eex:236 lib/block_scout_web/templates/layout/_footer.html.eex:47
+#: lib/block_scout_web/templates/chain/show.html.eex:236 lib/block_scout_web/templates/layout/_footer.html.eex:50
 #: lib/block_scout_web/templates/layout/_topnav.html.eex:53 lib/block_scout_web/views/address_view.ex:356
 msgid "Transactions"
 msgstr ""
@@ -2779,7 +2774,7 @@ msgid "Try it out"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_footer.html.eex:30
+#: lib/block_scout_web/templates/layout/_footer.html.eex:33
 msgid "Twitter"
 msgstr ""
 
@@ -3285,7 +3280,7 @@ msgstr ""
 msgid "Error in internal transactions"
 msgstr ""
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/block_scout_web/templates/block/_tile.html.eex:40
 #: lib/block_scout_web/templates/chain/_block.html.eex:16
 msgid "Block Proposer"
@@ -3303,12 +3298,12 @@ msgid "Cronos | cronos.org EVM Chain | Explorer"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_footer.html.eex:36
+#: lib/block_scout_web/templates/layout/_footer.html.eex:39
 msgid "Discord"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_footer.html.eex:45
+#: lib/block_scout_web/templates/layout/_footer.html.eex:48
 msgid "Home"
 msgstr ""
 
@@ -3330,4 +3325,14 @@ msgstr ""
 #: lib/block_scout_web/views/block_view.ex:20 lib/block_scout_web/views/wei_helpers.ex:76
 #: lib/block_scout_web/views/wei_helpers.ex:77
 msgid "basetcro"
+msgstr ""
+
+#, elixir-format, fuzzy
+#: lib/block_scout_web/templates/layout/_footer.html.eex:25
+msgid " CRO Protocol Labs. All rights reserved."
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/layout/_footer.html.eex:23
+msgid "Copyright © "
 msgstr ""

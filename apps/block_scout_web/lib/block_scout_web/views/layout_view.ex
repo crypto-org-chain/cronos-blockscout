@@ -48,6 +48,10 @@ defmodule BlockScoutWeb.LayoutView do
     Keyword.get(application_config(), :logo_text) || nil
   end
 
+  def copyright_year do
+    DateTime.utc_now().year
+  end
+
   def subnetwork_title do
     Keyword.get(application_config(), :subnetwork) || "Cronos"
   end
