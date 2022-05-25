@@ -373,16 +373,6 @@
               <dd class="col-sm-9 col-lg-10"> <%= format_wei_value(max_fee_per_gas, :ether) %> </dd>
             </dl>
           <% end %>
-          <%= if !is_nil(max_priority_fee_per_gas) do %>
-            <dl class="row">
-              <dt class="col-sm-3 col-lg-2 text-muted">
-                <%= render BlockScoutWeb.CommonComponentsView, "_i_tooltip_2.html",
-                  text: gettext("User defined maximum fee (tip) per unit of gas paid to validator for transaction prioritization.") %>
-                <%= gettext "Max Priority Fee per Gas" %>
-              </dt>
-              <dd class="col-sm-9 col-lg-10"> <%= format_wei_value(max_priority_fee_per_gas, :ether) %> </dd>
-            </dl>
-          <% end %>
           <%= if !is_nil(priority_fee) do %>
             <dl class="row">
               <dt class="col-sm-3 col-lg-2 text-muted">
