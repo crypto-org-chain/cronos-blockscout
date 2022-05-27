@@ -7,6 +7,9 @@
   <%= if CustomContractsHelpers.is_in_black_list(Address.checksum(@token.contract_address_hash), @token.symbol) do%>
     <div class="address-warn">Warning! It was reported that this address is a non-official token deployment. User should be careful when interacting with this address.</div>
   <% end %>
+  <%= if CustomContractsHelpers.is_luna(Address.checksum(@token.contract_address_hash), "") == "LUNC" do%>
+    <div class="address-warn">Please note this token represents LUNA Classic bridged from the Terra Classic chain.</div>
+  <% end %>
   <div class="row js-ad-dependant-mb-2 js-ad-dependant-mb-5-reverse">
     <div class="col-md-12 js-ad-dependant-mb-2">
       <div class="card js-ad-dependant-mb-2">
@@ -36,7 +39,7 @@
                     data-foreign-address-hash="<%= if Map.has_key?(@token, :foreign_token_contract_address_hash), do: Address.checksum(@token.foreign_token_contract_address_hash), else: "" %>"
                     data-display-token-icons="<%= System.get_env("DISPLAY_TOKEN_ICONS") %>">
                   </span>
-                  <div class="title-with-label"><%= @token.name %></div>
+                  <div class="title-with-label"><%= CustomContractsHelpers.is_luna(Address.checksum(@token.contract_address_hash), @token.name) %></div>
                   <%= if tag !== "" do %>
                     <%= render BlockScoutWeb.FormView, "_tag.html", text: "bridged", additional_classes: ["bridged", "ml-1"] %>
                     <%= render BlockScoutWeb.FormView, "_tag.html", text: String.upcase(tag), additional_classes: ["destination-#{tag}", "ml-1"] %>
@@ -93,7 +96,7 @@
                   <%= format_according_to_decimals(@token.total_supply, @token.decimals) %>
                 <% else %>
                   <%= format_integer_to_currency(@token.total_supply) %>
-                <% end %> <%= @token.symbol %>
+                <% end %> <%= CustomContractsHelpers.is_luna(Address.checksum(@token.contract_address_hash), @token.name) %>
               </dd>
             </dl>
             <%= if @token.usd_value do %>
