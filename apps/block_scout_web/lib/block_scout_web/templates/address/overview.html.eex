@@ -8,6 +8,9 @@
   <%= if CustomContractsHelpers.is_in_black_list(@address, "") do%>
     <div class="address-warn">Warning! It was reported that this address is a non-official token deployment. User should be careful when interacting with this address.</div>
   <% end %>
+  <%= if CustomContractsHelpers.is_luna(@address, "") == "LUNC" do%>
+    <div class="address-warn">Please note this token represents LUNA Classic bridged from the Terra Classic chain.</div>
+  <% end %>
   <div class="row js-ad-dependant-mb-2 js-ad-dependant-mb-5-reverse">
     <!-- Address details -->
     <div class="col-md-12 js-ad-dependant-mb-2">

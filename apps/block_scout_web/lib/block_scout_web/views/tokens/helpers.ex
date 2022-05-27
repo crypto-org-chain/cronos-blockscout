@@ -61,8 +61,15 @@ defmodule BlockScoutWeb.Tokens.Helpers do
     AddressView.short_hash_left_right(address_hash)
   end
 
-  def token_symbol(%Token{symbol: symbol}) do
-    symbol
+  def token_symbol(%Token{symbol: symbol, contract_address_hash: address_hash}) do
+    result =
+      if String.downcase("#{address_hash}") == "0x9278c8693e7328bef49804bacbfb63253565dffd" do
+        "LUNC"
+      else
+        symbol
+      end
+
+    result
   end
 
   @doc """

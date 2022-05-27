@@ -1,6 +1,8 @@
 defmodule BlockScoutWeb.Tokens.HolderView do
   use BlockScoutWeb, :view
 
+  alias Explorer.{CustomContractsHelpers}
+  alias Explorer.Chain.{Address}
   alias BlockScoutWeb.Tokens.OverviewView
   alias Explorer.Chain.Token
 
