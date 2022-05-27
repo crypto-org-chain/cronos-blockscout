@@ -37,6 +37,17 @@ defmodule Explorer.CustomContractsHelpers do
     result
   end
 
+  def is_luna(address, name) do
+    result =
+      if String.downcase("#{address}") == "0x9278c8693e7328bef49804bacbfb63253565dffd" do
+        "LUNC"
+      else
+        name
+      end
+
+    result
+  end
+
   def get_custom_addresses_list(env_var) do
     addresses_var = get_raw_custom_addresses_list(env_var)
     addresses_list = (addresses_var && String.split(addresses_var, ",")) || []
