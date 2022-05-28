@@ -62,14 +62,7 @@ defmodule BlockScoutWeb.Tokens.Helpers do
   end
 
   def token_symbol(%Token{symbol: symbol, contract_address_hash: address_hash}) do
-    result =
-      if String.downcase("#{address_hash}") == "0x9278c8693e7328bef49804bacbfb63253565dffd" do
-        "LUNC"
-      else
-        symbol
-      end
-
-    result
+    CurrencyHelpers.luna_to_lunc(symbol, address_hash)
   end
 
   @doc """
@@ -84,7 +77,7 @@ defmodule BlockScoutWeb.Tokens.Helpers do
     AddressView.short_hash_left_right(address_hash)
   end
 
-  defp build_token_name(%{name: name}) do
-    name
+  defp build_token_name(%{name: name, contract_address_hash: address_hash}) do
+    CurrencyHelpers.luna_to_lunc(name, address_hash)
   end
 end
