@@ -28,6 +28,9 @@ defmodule BlockScoutWeb.CurrencyHelpers do
 
       iex> BlockScoutWeb.CurrencyHelpers.luna_to_lunc("LUNA", "0x9278c8693e7328bef49804bacbfb63253565dffd")
       "LUNC"
+
+      iex> BlockScoutWeb.CurrencyHelpers.luna_to_lunc("TEST", "0xc21223249CA28397B4B6541dfFaEcC539BfF0c59")
+      "TEST"
   """
   @spec luna_to_lunc(String.t(), String.t()) :: String.t()
   def luna_to_lunc(value, address) do
