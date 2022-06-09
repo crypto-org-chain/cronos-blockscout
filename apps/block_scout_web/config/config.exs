@@ -27,6 +27,7 @@ config :block_scout_web, BlockScoutWeb.Chain,
   staking_enabled_in_menu: System.get_env("ENABLE_POS_STAKING_IN_MENU", "false") == "true",
   show_staking_warning: System.get_env("SHOW_STAKING_WARNING", "false") == "true",
   show_maintenance_alert: System.get_env("SHOW_MAINTENANCE_ALERT", "false") == "true",
+  show_indexing_status: System.get_env("SHOW_INDEXING_STATUS", "false") == "true",
   # how often (in blocks) the list of pools should autorefresh in UI (zero turns off autorefreshing)
   staking_pool_list_refresh_interval: 5
 

@@ -3310,3 +3310,8 @@ msgstr ""
 #: lib/block_scout_web/templates/layout/_footer.html.eex:23
 msgid "Copyright © "
 msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/layout/app.html.eex:221
+msgid "- We're indexing this chain right now. Some of the counts may be inaccurate."
+msgstr ""
