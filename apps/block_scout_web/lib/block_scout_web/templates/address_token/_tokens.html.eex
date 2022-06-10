@@ -29,7 +29,7 @@
     <%= format_according_to_decimals(@token_balance.value, @token.decimals)  %>
   </td>
   <td class="stakes-td">
-    <%= @token.symbol %>
+    <%= luna_to_lunc(@token.symbol, to_string(@token.contract_address_hash)) %>
   </td>
   <td class="stakes-td">
     <p class="mb-0 col-md-6 text-right text-muted">
