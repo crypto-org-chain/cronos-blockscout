@@ -6,8 +6,7 @@ defmodule BlockScoutWeb.BlockView do
   alias Explorer.Chain
   alias Explorer.Chain.{Block, Wei}
   alias Explorer.Chain.Block.Reward
-  alias Explorer.Counters.{BlockBurnedFeeCounter, BlockPriorityFeeCounter}
-
+  alias Explorer.Counters.BlockPriorityFeeCounter
   @dialyzer :no_match
 
   def average_gas_price(%Block{transactions: transactions}) do

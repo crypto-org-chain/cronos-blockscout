@@ -4,9 +4,11 @@
     <div class="row footer-logo-row">
       <div class="col-md-12">
         <%= link to: webapp_url(@conn), class: "footer-brand" do %>
-          <img class="footer-logo" src="<%= static_path(@conn, logo_footer()) %>" alt="<%= subnetwork_title() %>" />
+          <%= if logo_footer() do %>
+            <img class="footer-logo" src="<%= static_path(@conn, logo_footer()) %>" alt="<%= subnetwork_title() %>" />
+          <% end %>
           <%= if logo_text() do %>
-            <span class="logo-text in-footer"> <%= logo_text() %> </span>
+            <span class="logo-text in-footer <%= unless logo_footer(), do: "no-logo" %>"> <%= logo_text() %> </span>
           <% end %>
         <% end %>
       </div>
@@ -18,7 +20,10 @@
     <div class="row">
       <div class="col-xs-12 col-lg-3">
         <p class="footer-info-text">
-          <%= gettext("Copyright © 2021 CRO Protocol Labs. All rights reserved.")%>
+          <%= gettext("Copyright © ")%>
+          <%= copyright_year() %>
+          <%= gettext(" CRO Protocol Labs. All rights reserved.")%>
+
           <a href="https://github.com/blockscout/blockscout" rel="noreferrer" class="footer-link" target="_blank"><%= gettext(" Powered by Blockscout") %></a>
         </p>
         <div class="footer-social-icons">
@@ -51,8 +56,8 @@
       <div class="col-xs-12 col-md-4 col-lg-<%= col_size %> footer-list">
         <h3><%= gettext("Resources") %></h3>
         <ul>
-          <li><a href="https://cronos.crypto.org/" target="_blank" rel="noreferrer" class="footer-link"><%= gettext("Cronos Website") %></a></li>
-          <li><a href="https://cronos.crypto.org/docs" target="_blank" rel="noreferrer" class="footer-link"><%= gettext("Documentation") %></a></li>
+          <li><a href="https://cronos.org/" target="_blank" rel="noreferrer" class="footer-link"><%= gettext("Cronos Website") %></a></li>
+          <li><a href="https://cronos.org/docs" target="_blank" rel="noreferrer" class="footer-link"><%= gettext("Documentation") %></a></li>
         </ul>
       </div>
 

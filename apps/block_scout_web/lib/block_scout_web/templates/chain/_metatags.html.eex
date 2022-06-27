@@ -1,18 +1,18 @@
 <title>
-  <%= gettext("Cronos | Crypto.org EVM Chain | Explorer") %>
+  <%= gettext("Cronos | cronos.org EVM Chain | Explorer") %>
 </title>
 
 <meta name="description" content="<%= gettext "Find out the latest blocks and transactions with Cronos Explorer to find the price,average block time, total transactions, total blocks, wallet addresses and more." %>">
-<link rel="canonical" href="https://cronos-explorer.crypto.org/">
+<link rel="canonical" href="https://cronos.org/explorer">
 
-<meta name="og:title" content="<%= gettext "Cronos | Crypto.org EVM Chain | Explorer" %>">
+<meta name="og:title" content="<%= gettext "Cronos | cronos.org EVM Chain | Explorer" %>">
 <meta name="og:description" content="<%= gettext "Find out the latest blocks and transactions with Cronos Explorer to find the price,average block time, total transactions, total blocks, wallet addresses and more." %>">
 <meta name="og:type" content="website">
-<meta name="og:image" content="https://cronos-explorer.crypto.org/og-image.png">
-<meta name="og:url" content="https://cronos-explorer.crypto.org/">
+<meta name="og:image" content="https://cronos.org/explorer/og-image.png">
+<meta name="og:url" content="https://cronos.org/explorer/">
 
 <meta name="twitter:card" content="website">
 <meta name="twitter:site" content="@cryptocom">
-<meta name="twitter:title" content="<%= gettext "Cronos | Crypto.org EVM Chain | Explorer" %>">
+<meta name="twitter:title" content="<%= gettext "Cronos | cronos.org EVM Chain | Explorer" %>">
 <meta name="twitter:description" content="<%= gettext "Find out the latest blocks and transactions with Cronos Explorer to find the price,average block time, total transactions, total blocks, wallet addresses and more." %>">
-<meta name="twitter:image" content="https://cronos-explorer.crypto.org/og-image.png">
+<meta name="twitter:image" content="https://cronos.org/explorer/og-image.png">

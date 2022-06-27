@@ -71,7 +71,7 @@ defmodule Indexer.Block.Fetcher do
   # These are all the *default* values for options.
   # DO NOT use them directly in the code.  Get options from `state`.
 
-  @receipts_batch_size 10
+  @receipts_batch_size 250
   @receipts_concurrency 20
 
   @doc false
@@ -110,7 +110,7 @@ defmodule Indexer.Block.Fetcher do
   @spec fetch_and_import_range(t, Range.t()) ::
           {:ok, %{inserted: %{}, errors: [EthereumJSONRPC.Transport.error()]}}
           | {:error,
-             {step :: atom(), reason :: [%Ecto.Changeset{}] | term()}
+             {step :: atom(), reason :: [Ecto.Changeset.t()] | term()}
              | {step :: atom(), failed_value :: term(), changes_so_far :: term()}}
   def fetch_and_import_range(
         %__MODULE__{

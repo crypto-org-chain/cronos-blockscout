@@ -8,7 +8,9 @@ This repository contains the code base of the Cronos Block Explorer
 
 ## Explorer Link
 
-Cronos Testnet: https://cronos-explorer.crypto.org
+Cronos Mainnet: https://cronos.org/explorer
+Cronos Testnet: https://cronos.org/explorer/testnet3
+Cronos Gravity Testnet: https://cronos.org/explorer/gravity/testnet3
 
 ## License
 

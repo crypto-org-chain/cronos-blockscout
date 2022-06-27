@@ -2,7 +2,7 @@ defmodule BlockScoutWeb.Tokens.HolderView do
   use BlockScoutWeb, :view
 
   alias BlockScoutWeb.Tokens.OverviewView
-  alias Explorer.Chain.Token
+  alias Explorer.Chain.{Address, Token}
 
   @doc """
   Checks if the total supply percentage must be shown.
@@ -72,5 +72,16 @@ defmodule BlockScoutWeb.Tokens.HolderView do
 
   def format_token_balance_value(value, _id, _token) do
     value
+  end
+
+  def is_luna(address, name) do
+    result =
+      if String.downcase("#{address}") == "0x9278c8693e7328bef49804bacbfb63253565dffd" do
+        "LUNC"
+      else
+        name
+      end
+
+    result
   end
 end

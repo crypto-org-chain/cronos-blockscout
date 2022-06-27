@@ -61,8 +61,8 @@ defmodule BlockScoutWeb.Tokens.Helpers do
     AddressView.short_hash_left_right(address_hash)
   end
 
-  def token_symbol(%Token{symbol: symbol}) do
-    symbol
+  def token_symbol(%Token{symbol: symbol, contract_address_hash: address_hash}) do
+    CurrencyHelpers.luna_to_lunc(symbol, address_hash)
   end
 
   @doc """
@@ -77,7 +77,7 @@ defmodule BlockScoutWeb.Tokens.Helpers do
     AddressView.short_hash_left_right(address_hash)
   end
 
-  defp build_token_name(%{name: name}) do
-    name
+  defp build_token_name(%{name: name, contract_address_hash: address_hash}) do
+    CurrencyHelpers.luna_to_lunc(name, address_hash)
   end
 end

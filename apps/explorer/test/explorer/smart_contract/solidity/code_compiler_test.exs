@@ -302,7 +302,7 @@ defmodule Explorer.SmartContract.Solidity.CodeCompilerTest do
       path = File.cwd!() <> "/test/support/fixture/smart_contract/large_smart_contract.sol"
       contract = File.read!(path)
 
-      assert {:ok, %{"abi" => abi}} =
+      assert {:ok, %{"abi" => _abi}} =
                CodeCompiler.run(
                  name: "HomeWorkDeployer",
                  compiler_version: "v0.5.9+commit.e560f70d",

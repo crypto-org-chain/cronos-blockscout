@@ -180,12 +180,21 @@ defmodule BlockScoutWeb.AddressView do
   """
   def primary_name(%Address{names: [_ | _] = address_names}) do
     case Enum.find(address_names, &(&1.primary == true)) do
-      nil -> nil
-      %Address.Name{name: name} -> name
+      nil ->
+        %Address.Name{name: name} = Enum.at(address_names, 0)
+        name
+
+      %Address.Name{name: name} ->
+        name
     end
   end
 
   def primary_name(%Address{names: _}), do: nil
+
+  def implementation_name(%Address{smart_contract: %{implementation_name: implementation_name}}),
+    do: implementation_name
+
+  def implementation_name(_), do: nil
 
   def primary_validator_metadata(%Address{names: [_ | _] = address_names}) do
     case Enum.find(address_names, &(&1.primary == true)) do
@@ -260,7 +269,16 @@ defmodule BlockScoutWeb.AddressView do
     short_hash_left_right(contract_address_hash)
   end
 
-  def token_title(%Token{name: name, symbol: symbol}), do: "#{name} (#{symbol})"
+  def token_title(%Token{name: name, symbol: symbol, contract_address_hash: contract_address_hash}) do
+    result =
+      if String.downcase("#{contract_address_hash}") == "0x9278c8693e7328bef49804bacbfb63253565dffd" do
+        "LUNC(LUNC)"
+      else
+        "#{name} (#{symbol})"
+      end
+
+    result
+  end
 
   def trimmed_hash(%Hash{} = hash) do
     string_hash = to_string(hash)
@@ -396,6 +414,17 @@ defmodule BlockScoutWeb.AddressView do
 
   def short_contract_name(name, max_length) do
     short_string(name, max_length)
+  end
+
+  def short_contract_name(name, max_length, %Hash{} = hash) do
+    result =
+      if String.downcase("#{to_string(hash)}") == "0x9278c8693e7328bef49804bacbfb63253565dffd" do
+        "LUNC"
+      else
+        short_string(name, max_length)
+      end
+
+    result
   end
 
   def short_token_id(%Decimal{} = token_id, max_length) do
