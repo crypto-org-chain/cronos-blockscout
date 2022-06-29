@@ -4,6 +4,12 @@
 <% created_from_address_hash = if from_address_hash(created_from_address), do: "0x" <> Base.encode16(from_address_hash(created_from_address).bytes, case: :lower), else: nil %>
 <section class="address-overview" data-page="token-details" data-page-address-hash="<%= @token.contract_address_hash %>">
   <%= render BlockScoutWeb.Advertisement.TextAdView, "index.html", conn: @conn %>
+  <%= if CustomContractsHelpers.is_in_black_list(Address.checksum(@token.contract_address_hash), @token.symbol) do%>
+    <div class="address-warn">Warning! It was reported that this address is a non-official token deployment. User should be careful when interacting with this address.</div>
+  <% end %>
+  <%= if CustomContractsHelpers.is_luna(Address.checksum(@token.contract_address_hash), "") == "LUNC" do%>
+    <div class="address-warn">Please note this token represents LUNA Classic bridged from the Terra Classic chain.</div>
+  <% end %>
   <div class="row js-ad-dependant-mb-2 js-ad-dependant-mb-5-reverse">
     <div class="col-md-12 js-ad-dependant-mb-2">
       <div class="card js-ad-dependant-mb-2">
@@ -29,13 +35,16 @@
                     data-address-hash="<%= Address.checksum(@token.contract_address_hash) %>"
                     data-display-token-icons="<%= System.get_env("DISPLAY_TOKEN_ICONS") %>">
                   </span>
-                  <div class="title-with-label"><%= @token.name %></div>
+                  <div class="title-with-label"><%= CustomContractsHelpers.is_luna(Address.checksum(@token.contract_address_hash), @token.name) %></div>
               <% else %>
                 <%= gettext("Token Details") %>
               <% end %>
             </div>
             <!-- buttons -->
-            <span class="overview-title-buttons token float-right">
+            <span class="overview-title-buttons token float-right <%= if @token.bridged, do: "bridged-tokens-buttons-mobile", else: "" %>">
+                <%= if CustomContractsHelpers.is_official_token(Address.checksum(@token.contract_address_hash)) do%>
+                  <span class="official-token-icon">Official token</span>
+                <% end %>
               <%= render BlockScoutWeb.CommonComponentsView, "_btn_copy.html",
                   additional_classes: ["overview-title-item"],
                   clipboard_text: Address.checksum(@token.contract_address_hash),
@@ -72,7 +81,7 @@
                   <%= format_according_to_decimals(@token.total_supply, @token.decimals) %>
                 <% else %>
                   <%= format_integer_to_currency(@token.total_supply) %>
-                <% end %> <%= @token.symbol %>
+                <% end %> <%= CustomContractsHelpers.is_luna(Address.checksum(@token.contract_address_hash), @token.name) %>
               </dd>
             </dl>
             <%= if @token.usd_value do %>
@@ -141,7 +150,7 @@
               <%= gettext("Token type") %>
             </dt>
             <dd class="col-sm-8 col-md-8 col-lg-9">
-              <%= @token.type %>
+              <%= transfer_erc20_to_crc20(@token.type) %>
             </dd>
           </dl>
         </div>

@@ -5,15 +5,26 @@ defmodule Explorer.ChainSpec.Geth.ImporterTest do
   import EthereumJSONRPC, only: [integer_to_quantity: 1]
 
   alias Explorer.Chain.Address.{CoinBalance, CoinBalanceDaily}
-  alias Explorer.Chain.{Address, Hash}
+  alias Explorer.Chain.{Address, Hash, Wei}
   alias Explorer.ChainSpec.Geth.Importer
   alias Explorer.Repo
+  alias Explorer.Chain.Block.{EmissionReward, Range}
 
   setup :set_mox_global
 
   @genesis "#{File.cwd!()}/test/support/fixture/chain_spec/qdai_genesis.json"
            |> File.read!()
            |> Jason.decode!()
+
+  describe "init_emission_rewards/0" do
+    test "init emission rewards table" do
+      assert {1, nil} = Importer.init_emission_rewards()
+      [first] = Repo.all(EmissionReward)
+
+      assert first.reward == %Wei{value: Decimal.new(0)}
+      assert first.block_range == %Range{from: 0, to: :infinity}
+    end
+  end
 
   describe "genesis_accounts/1" do
     test "parses coin balance and contract code" do

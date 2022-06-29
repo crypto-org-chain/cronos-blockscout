@@ -1,5 +1,10 @@
 <% apps_menu = Application.get_env(:block_scout_web, :apps_menu) %>
 <nav class="navbar navbar-dark navbar-expand-lg navbar-primary" data-selector="navbar" id="top-navbar">
+  <script>
+    if (localStorage.getItem("current-color-mode") === "dark") {
+      document.getElementById("top-navbar").style.backgroundColor = "#0b1426";
+    }
+  </script>
   <div class="container-fluid navbar-container">
     <%= link to: webapp_url(@conn), class: "navbar-brand", "data-test": "header_logo" do %>
       <%= if logo() do %>
@@ -9,6 +14,11 @@
         <span class="logo-text <%= unless logo(), do: "no-logo" %>"> <%= logo_text() %> </span>
       <% end %>
     <% end %>
+    <script>
+      if (localStorage.getItem("current-color-mode") === "dark") {
+        document.getElementById("navbar-logo").style.filter = "brightness(0) invert(1)";
+      }
+    </script>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<%= gettext("Toggle navigation") %>">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -66,14 +76,14 @@
               </span>
               <%= gettext("Tokens") %>
             </a>
-            <div class="dropdown-menu" aria-labeledby="navbarTransactionsDropdown"> 
+            <div class="dropdown-menu" aria-labeledby="navbarTransactionsDropdown">
               <%= link(
                     gettext("All"),
                     class: "dropdown-item #{tab_status("tokens", @conn.request_path)}",
                     to: tokens_path(@conn, :index)
                   ) %>
               <%= link(
-                    gettext("Ether"),
+                    gettext("Accounts"),
                     class: "dropdown-item #{tab_status("accounts", @conn.request_path)}",
                     to: address_path(@conn, :index)
                   ) %>

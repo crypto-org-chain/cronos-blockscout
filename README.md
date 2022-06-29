@@ -1,51 +1,44 @@
-<h1 align="center">BlockScout</h1>
-<p align="center">Blockchain Explorer for inspecting and analyzing EVM Chains.</p>
-<div align="center">
+<h1 align="center">
+    <img src="./assets/cronos.svg" alt="Cronos Logo" width="300" />
+</h1>
 
-[![Blockscout](https://github.com/blockscout/blockscout/workflows/Blockscout/badge.svg?branch=master)](https://github.com/blockscout/blockscout/actions) 
+# Block Explorer
 
-</div>
+This repository contains the code base of the Cronos Block Explorer
 
-BlockScout provides a comprehensive, easy-to-use interface for users to view, confirm, and inspect transactions on EVM (Ethereum Virtual Machine) blockchains. This includes the POA Network, Gnosis Chain, Ethereum Classic and other **Ethereum testnets, private networks and sidechains**.
+## Explorer Link
 
-See our [project documentation](https://docs.blockscout.com/) for detailed information and setup instructions.
-
-For questions, comments and feature requests see the [discussions section](https://github.com/blockscout/blockscout/discussions).
-
-## About BlockScout
-
-BlockScout is an Elixir application that allows users to search transactions, view accounts and balances, and verify smart contracts on the Ethereum network including all forks and sidechains.
-
-Currently available full-featured block explorers (Etherscan, Etherchain, Blockchair) are closed systems which are not independently verifiable.  As Ethereum sidechains continue to proliferate in both private and public settings, transparent, open-source tools are needed to analyze and validate transactions.
-
-## Supported Projects
-
-BlockScout supports a number of projects. Hosted instances include POA Network, Gnosis Chain, Ethereum Classic, Sokol & Kovan testnets, and other EVM chains. 
-
-- [List of hosted mainnets, testnets, and additional chains using BlockScout](https://docs.blockscout.com/for-projects/supported-projects)
-- [Hosted instance versions](https://docs.blockscout.com/about/use-cases/hosted-blockscout)
-
-
-## Getting Started
-
-See the [project documentation](https://docs.blockscout.com/) for instructions:
-- [Requirements](https://docs.blockscout.com/for-developers/information-and-settings/requirements)
-- [Ansible deployment](https://docs.blockscout.com/for-developers/ansible-deployment)
-- [Manual deployment](https://docs.blockscout.com/for-developers/manual-deployment)
-- [ENV variables](https://docs.blockscout.com/for-developers/information-and-settings/env-variables)
-- [Configuration options](https://docs.blockscout.com/for-developers/configuration-options)
-
-
-## Acknowledgements
-
-We would like to thank the [EthPrize foundation](http://ethprize.io/) for their funding support.
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution and pull request protocol. We expect contributors to follow our [code of conduct](CODE_OF_CONDUCT.md) when submitting code or comments.
+Cronos Mainnet: https://cronos.org/explorer
+Cronos Testnet: https://cronos.org/explorer/testnet3
+Cronos Gravity Testnet: https://cronos.org/explorer/gravity/testnet3
 
 ## License
 
 [![License: GPL v3.0](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 This project is licensed under the GNU General Public License v3.0. See the [LICENSE](LICENSE) file for details.
+
+The Cronos logo design and all related trademarks, trade names and service marks are the exclusive property of CRO Protocol Labs. All rights reserved.
+
+No adaption or use of any kind of any of our trademarks, trade names, service marks or copyrights is allowed without the express written permission of CRO Protocol Labs.
+
+## BlockScout
+
+Cronos Explorer is powered by [BlockScout](https://github.com/blockscout/blockscout).
+
+See the BlockScout [project documentation](https://docs.blockscout.com/) and [GitHub](https://github.com/blockscout/blockscout). for detailed information and setup instructions.
+
+## Getting Started
+
+See the BLockScout [project documentation](https://docs.blockscout.com/) for instructions:
+- [Requirements](https://docs.blockscout.com/for-developers/information-and-settings/requirements)
+- [Ansible deployment](https://docs.blockscout.com/for-developers/ansible-deployment)
+- [Manual deployment](https://docs.blockscout.com/for-developers/manual-deployment)
+- [ENV variables](https://docs.blockscout.com/for-developers/information-and-settings/env-variables)
+- [Configuration options](https://docs.blockscout.com/for-developers/configuration-options)
+
+## Custom changes by Cronos
+
+- [Disable internal transactions and debug query](https://github.com/crypto-org-chain/cronos-blockscout/commit/2c6b6a561724b63bdb74a2a57b030f9498d8f952)
+- [Modified empty internal transactions message](https://github.com/crypto-org-chain/cronos-blockscout/commit/fe33a38c195bad83924d2bdd3800cff93abf172a)
+- Modified labels, terms, theme and design: [#6](https://github.com/crypto-org-chain/cronos-blockscout/pull/6/files), [#12](https://github.com/crypto-org-chain/cronos-blockscout/pull/12/files), [#23](https://github.com/crypto-org-chain/cronos-blockscout/pull/23) [36f719](https://github.com/crypto-org-chain/cronos-blockscout/commit/36f7199893011afb25022841cd2b3a2556bb9d58), [665031](https://github.com/crypto-org-chain/cronos-blockscout/commit/66503103bc36f02c9d703d9851a505a9f3956a43)

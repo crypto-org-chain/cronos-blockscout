@@ -20,12 +20,6 @@ defmodule BlockScoutWeb.ChainControllerTest do
   end
 
   describe "GET index/2" do
-    test "returns a welcome message", %{conn: conn} do
-      conn = get(conn, chain_path(BlockScoutWeb.Endpoint, :show))
-
-      assert(html_response(conn, 200) =~ "POA")
-    end
-
     test "returns a block" do
       insert(:block, %{number: 23})
 

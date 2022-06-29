@@ -81,4 +81,14 @@ defmodule BlockScoutWeb.CurrencyHelpersTest do
       assert Decimal.compare(result, expected_result) == :eq
     end
   end
+
+  describe "transfer_erc20_to_crc20/1" do
+    test "transfer ERC20 to CRC20" do
+      assert CurrencyHelpers.transfer_erc20_to_crc20("ERC-20") == "CRC-20"
+    end
+
+    test "Returns the same value as the one passed in" do
+      assert CurrencyHelpers.transfer_erc20_to_crc20("ERC-1155") == "ERC-1155"
+    end
+  end
 end

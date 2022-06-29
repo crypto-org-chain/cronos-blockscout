@@ -6,8 +6,7 @@ defmodule BlockScoutWeb.BlockView do
   alias Explorer.Chain
   alias Explorer.Chain.{Block, Wei}
   alias Explorer.Chain.Block.Reward
-  alias Explorer.Counters.{BlockBurnedFeeCounter, BlockPriorityFeeCounter}
-
+  alias Explorer.Counters.BlockPriorityFeeCounter
   @dialyzer :no_match
 
   def average_gas_price(%Block{transactions: transactions}) do
@@ -18,7 +17,7 @@ defmodule BlockScoutWeb.BlockView do
       |> Kernel.||(0)
       |> BlockScoutWeb.Cldr.Number.to_string!()
 
-    unit_text = gettext("Gwei")
+    unit_text = System.get_env("BASE_DENOM") || gettext("basetcro")
 
     "#{average} #{unit_text}"
   end

@@ -25,6 +25,8 @@ defmodule EthereumJSONRPC do
   documentation for `EthereumJSONRPC.RequestCoordinator`.
   """
 
+  require Logger
+
   alias EthereumJSONRPC.{
     Block,
     Blocks,
@@ -481,7 +483,30 @@ defmodule EthereumJSONRPC do
            id_to_params
            |> Blocks.requests(request)
            |> json_rpc(json_rpc_named_arguments) do
+      Enum.each(
+        responses,
+        fn response ->
+          log_response_with_empty_tx(response)
+        end
+      )
+
       {:ok, Blocks.from_responses(responses, id_to_params)}
+    end
+  end
+
+  defp trace_first_block_to_fetch do
+    first_block_to_fetch(:trace_first_block)
+  end
+
+  defp log_response_with_empty_tx(response) do
+    result = Map.get(response, "result") || Map.get(response, :result)
+
+    if !is_nil(result) do
+      transactions = Map.get(result, "transactions") || Map.get(result, :transactions)
+
+      if !is_nil(transactions) && transactions == [] do
+        Logger.info("Received block with empty transactions: #{inspect(response)} ")
+      end
     end
   end
 

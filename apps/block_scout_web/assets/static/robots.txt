@@ -3,3 +3,18 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-agent: *
 # Disallow: /
+
+User-agent : *
+Disallow: /blocks
+Disallow: /uncles
+Disallow: /reorgs
+Disallow: /txs
+Disallow: /pending-transactions
+Disallow: /accounts
+Disallow: /address
+Disallow: /tokens
+Disallow: /tx
+Disallow: /graphiql
+Disallow: /api-docs
+Disallow: /eth-rpc-api-docs
+Disallow: /search

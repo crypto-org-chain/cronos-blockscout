@@ -1,6 +1,6 @@
 <div data-token-type="<%= @type %>">
   <h6 class="dropdown-header" style="margin-left: 5px;">
-    <%= @type %> (<span data-number-of-tokens-by-type="<%= @type %>"><%= Enum.count(@token_balances)%></span>)
+    <%= transfer_erc20_to_crc20(@type) %> (<span data-number-of-tokens-by-type="<%= transfer_erc20_to_crc20(@type) %>"><%= Enum.count(@token_balances)%></span>)
   </h6>
 
   <%= for {token_balance, token} <- sort_by_usd_value_and_name(@token_balances) do %>

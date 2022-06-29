@@ -31,6 +31,7 @@ config :indexer,
   ecto_repos: [Explorer.Repo],
   metadata_updater_seconds_interval:
     String.to_integer(System.get_env("TOKEN_METADATA_UPDATE_INTERVAL") || "#{2 * 24 * 60 * 60}"),
+  # bytes
   first_block: System.get_env("FIRST_BLOCK") || "",
   last_block: System.get_env("LAST_BLOCK") || "",
   trace_first_block: System.get_env("TRACE_FIRST_BLOCK") || "",
@@ -52,6 +53,7 @@ token_balance_on_demand_fetcher_threshold =
   end
 
 config :indexer, Indexer.Fetcher.TokenBalanceOnDemand, threshold: token_balance_on_demand_fetcher_threshold
+config :indexer, Indexer.WebappSupervisor, enabled: System.get_env("DISABLE_INDEXER") == "true"
 
 coin_balance_on_demand_fetcher_threshold_minutes = System.get_env("COIN_BALANCE_ON_DEMAND_FETCHER_THRESHOLD_MINUTES")
 

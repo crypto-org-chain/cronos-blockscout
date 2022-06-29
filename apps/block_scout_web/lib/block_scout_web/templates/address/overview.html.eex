@@ -5,6 +5,12 @@
   <% circles_addresses_list = CustomContractsHelpers.get_custom_addresses_list(:circles_addresses) %>
   <% current_address = "0x" <> Base.encode16(@address.hash.bytes, case: :lower) %>
   <% created_from_address_hash = if from_address_hash(@address), do: "0x" <> Base.encode16(from_address_hash(@address).bytes, case: :lower), else: nil %>
+  <%= if CustomContractsHelpers.is_in_black_list(@address, "") do%>
+    <div class="address-warn">Warning! It was reported that this address is a non-official token deployment. User should be careful when interacting with this address.</div>
+  <% end %>
+  <%= if CustomContractsHelpers.is_luna(@address, "") == "LUNC" do%>
+    <div class="address-warn">Please note this token represents LUNA Classic bridged from the Terra Classic chain.</div>
+  <% end %>
   <div class="row js-ad-dependant-mb-2 js-ad-dependant-mb-5-reverse">
     <!-- Address details -->
     <div class="col-md-12 js-ad-dependant-mb-2">
@@ -30,6 +36,9 @@
             <div class="title-with-label"><%= address_title(@address) %> <%= gettext "Details" %></div>
             <!-- buttons -->
             <span class="overview-title-buttons float-right">
+              <%= if CustomContractsHelpers.is_official_token(@address) do%>
+                <span class="official-token-icon">Official token</span>
+              <% end %>
               <%= render BlockScoutWeb.CommonComponentsView, "_btn_copy.html",
                       id: "tx-raw-input",
                       additional_classes: ["overview-title-item"],
@@ -80,7 +89,7 @@
                     @address.hash),
                     "data-test":
                     "token_hash_link"
-                  ) 
+                  )
                   %>
                 </dd>
               </dl>
@@ -152,8 +161,9 @@
                 <%= link(
                   (if name, do: name <> " | " <> implementation_address, else: implementation_address),
                   to: address_path(@conn, :show, implementation_address),
-                  class: "contract-address"
-                ) 
+                  class: "contract-address mb-2",
+                  style: "margin-top: 0.5rem;"
+                )
                 %>
               </dd>
             </dl>
@@ -176,7 +186,7 @@
                     data-placement="top"
                     data-toggle="tooltip"
                     data-html="true"
-                    title='<%= "@ " <> usd_value <> "/" <> gettext("Ether") %>'  
+                    title='<%= "@ " <> usd_value <> "/" <> gettext("Ether") %>'
                   >
                   </span>)
                 </span>
@@ -309,4 +319,4 @@
   <%= render BlockScoutWeb.AddressView, "_validator_metadata_modal.html", address_name: address_name, validator_metadata: validator_metadata %>
 <% end %>
 
-<%= render BlockScoutWeb.Advertisement.BannersAdView, "_banner_728.html", conn: @conn %> 
+<%= render BlockScoutWeb.Advertisement.BannersAdView, "_banner_728.html", conn: @conn %>

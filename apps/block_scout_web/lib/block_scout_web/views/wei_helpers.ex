@@ -29,13 +29,13 @@ defmodule BlockScoutWeb.WeiHelpers do
   ## Examples
 
       iex> format_wei_value(%Wei{value: Decimal.new(1)}, :wei)
-      "1 Wei"
+      "1 basetcro"
 
       iex> format_wei_value(%Wei{value: Decimal.new(1, 10, 12)}, :gwei)
-      "10,000 Gwei"
+      "1,000 basetcro"
 
       iex> format_wei_value(%Wei{value: Decimal.new(1, 10, 21)}, :ether)
-      "10,000 Ether"
+      "10,000 TCRO"
 
       # With formatting options
 
@@ -43,7 +43,7 @@ defmodule BlockScoutWeb.WeiHelpers do
       ...>   %Wei{value: Decimal.new(1000500000000000000)},
       ...>   :ether
       ...> )
-      "1.0005 Ether"
+      "1.0005 TCRO"
 
       iex> format_wei_value(
       ...>   %Wei{value: Decimal.new(10)},
@@ -73,7 +73,7 @@ defmodule BlockScoutWeb.WeiHelpers do
     end
   end
 
-  defp display_unit(:wei), do: gettext("Wei")
-  defp display_unit(:gwei), do: gettext("Gwei")
-  defp display_unit(:ether), do: gettext("Ether")
+  defp display_unit(:wei), do: System.get_env("BASE_DENOM") || gettext("basetcro")
+  defp display_unit(:gwei), do: System.get_env("BASE_DENOM") || gettext("basetcro")
+  defp display_unit(:ether), do: System.get_env("MAIN_DENOM") || gettext("TCRO")
 end

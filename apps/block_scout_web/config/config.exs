@@ -24,6 +24,7 @@ config :block_scout_web, BlockScoutWeb.Chain,
   logo_text: System.get_env("LOGO_TEXT"),
   has_emission_funds: false,
   show_maintenance_alert: System.get_env("SHOW_MAINTENANCE_ALERT", "false") == "true"
+  show_indexing_status: System.get_env("SHOW_INDEXING_STATUS", "false") == "true",
 
 config :block_scout_web,
   link_to_other_explorers: System.get_env("LINK_TO_OTHER_EXPLORERS") == "true",
