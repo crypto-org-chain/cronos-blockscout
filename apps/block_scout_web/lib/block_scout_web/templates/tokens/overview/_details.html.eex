@@ -41,7 +41,7 @@
               <% end %>
             </div>
             <!-- buttons -->
-            <span class="overview-title-buttons token float-right <%= if @token.bridged, do: "bridged-tokens-buttons-mobile", else: "" %>">
+            <span class="overview-title-buttons token float-right">
                 <%= if CustomContractsHelpers.is_official_token(Address.checksum(@token.contract_address_hash)) do%>
                   <span class="official-token-icon">Official token</span>
                 <% end %>

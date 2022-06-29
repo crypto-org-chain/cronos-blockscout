@@ -4,7 +4,6 @@ defmodule BlockScoutWeb.ChainView do
   require Decimal
   import Number.Currency, only: [number_to_currency: 2]
 
-  alias BlockScoutWeb.LayoutView
   alias Explorer.Chain.Cache.GasPriceOracle
 
   defp market_cap(:standard, %{available_supply: available_supply, usd_value: usd_value})
