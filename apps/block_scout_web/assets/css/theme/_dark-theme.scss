@@ -108,7 +108,7 @@ $dark-btn-hover-bg: #43aefb;
 
 	.layout-container .dashboard-banner-container {
 		background-image: none;
-		background-color: $dark-bg;
+		background-color: $dark-bg !important;
 	}
 	.dashboard-banner-network-plain-container,
 	.dashboard-banner-network-plain-container::after {
@@ -118,14 +118,33 @@ $dark-btn-hover-bg: #43aefb;
 	.dashboard-banner-chart-legend .dashboard-banner-chart-legend-label {
 		color: $dark-subtitle-color;
 	}
-	.dashboard-banner-chart-legend .dashboard-banner-chart-legend-item:nth-child(1)::before {
-		background-color: $dark-primary;
-	}
 	.dashboard-banner-network-stats-item::before {
 		background-color: $dark-secondary;
 	}
-	.dashboard-banner-chart-legend .dashboard-banner-chart-legend-item:nth-child(2)::before {
-		background-color: $dark-secondary;
+	.dashboard-banner-chart-legend .dashboard-banner-chart-legend-item {
+		&.price-per-day {
+			&::before {
+			  background-color: $dark-primary;
+			}
+		  }
+
+		  &.gas-price-oracle {
+			&::before {
+			  background-color: $dark-primary;
+			}
+		  }
+
+		  &.market-cap-per-day {
+			&::before {
+			  background-color:$dark-secondary;
+			}
+		  }
+
+		  &.tx-per-day {
+			&::before {
+			  background-color: $dashboard-line-color-transactions;
+			}
+		  }
 	}
 
 	// main container, layout, cards
@@ -300,6 +319,9 @@ $dark-btn-hover-bg: #43aefb;
 	}
 	.dropdown-item.active {
 		background-color: $dark-primary;
+	}
+	.dropdown-item.active.header,	.dropdown-item.header:hover,	.dropdown-item.header:focus {
+		background-color: $dark-light !important;
 	}
 	.btn-dropdown-line {
 		background-color: $dark-light;
@@ -1185,6 +1207,6 @@ $dark-btn-hover-bg: #43aefb;
 }
 
 .dark-theme-applied .btn-no-border-link-to-tems {
-	border-color: $dark-primary !important;
-	color: $dark-primary !important;
+	border-color: $dark-primary;
+	color: $dark-primary;
 }

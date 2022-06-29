@@ -221,13 +221,7 @@ defmodule EthereumJSONRPC do
   @spec fetch_beneficiaries([block_number], json_rpc_named_arguments) ::
           {:ok, FetchedBeneficiaries.t()} | {:error, reason :: term} | :ignore
   def fetch_beneficiaries(block_numbers, json_rpc_named_arguments) when is_list(block_numbers) do
-    min_block = trace_first_block_to_fetch()
-
-    filtered_block_numbers =
-      block_numbers
-      |> Enum.filter(fn block_number ->
-        block_number >= min_block
-      end)
+    filtered_block_numbers = block_numbers_in_range(block_numbers)
 
     Keyword.fetch!(json_rpc_named_arguments, :variant).fetch_beneficiaries(
       filtered_block_numbers,
@@ -312,18 +306,21 @@ defmodule EthereumJSONRPC do
   Fetches internal transactions for entire blocks from variant API.
   """
   def fetch_block_internal_transactions(block_numbers, json_rpc_named_arguments) when is_list(block_numbers) do
-    min_block = trace_first_block_to_fetch()
-
-    filtered_block_numbers =
-      block_numbers
-      |> Enum.filter(fn block_number ->
-        block_number >= min_block
-      end)
+    filtered_block_numbers = block_numbers_in_range(block_numbers)
 
     Keyword.fetch!(json_rpc_named_arguments, :variant).fetch_block_internal_transactions(
       filtered_block_numbers,
       json_rpc_named_arguments
     )
+  end
+
+  def block_numbers_in_range(block_numbers) do
+    min_block = first_block_to_fetch(:trace_first_block)
+
+    block_numbers
+    |> Enum.filter(fn block_number ->
+      block_number >= min_block
+    end)
   end
 
   @doc """
