@@ -23,6 +23,7 @@ config :block_scout_web, BlockScoutWeb.Chain,
   logo_footer: System.get_env("LOGO_FOOTER"),
   logo_text: System.get_env("LOGO_TEXT"),
   has_emission_funds: false,
+  staking_enabled_in_menu: System.get_env("ENABLE_POS_STAKING_IN_MENU", "false") == "true",
   show_maintenance_alert: System.get_env("SHOW_MAINTENANCE_ALERT", "false") == "true",
   show_indexing_status: System.get_env("SHOW_INDEXING_STATUS", "false") == "true"
 
@@ -113,14 +114,14 @@ config :block_scout_web, BlockScoutWeb.SocialMedia,
 
 # Configures History
 price_chart_config =
-  if System.get_env("SHOW_PRICE_CHART", "false") != "false" do
+  if System.get_env("SHOW_PRICE_CHART", "true") != "false" do
     %{market: [:price, :market_cap]}
   else
     %{}
   end
 
 tx_chart_config =
-  if System.get_env("SHOW_TXS_CHART", "true") == "true" do
+  if System.get_env("SHOW_TXS_CHART", "false") == "true" do
     %{transactions: [:transactions_per_day]}
   else
     %{}
