@@ -1,7 +1,7 @@
 defmodule BlockScoutWeb.Tokens.Instance.HolderController do
   use BlockScoutWeb, :controller
 
-  alias BlockscoutWeb.Controller
+  alias BlockScoutWeb.Controller
   alias BlockScoutWeb.Tokens.HolderView
   alias Explorer.{Chain, Market}
   alias Explorer.Chain.Address
