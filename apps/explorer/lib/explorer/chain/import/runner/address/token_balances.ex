@@ -14,7 +14,7 @@ defmodule Explorer.Chain.Import.Runner.Address.TokenBalances do
   @behaviour Import.Runner
 
   # milliseconds
-  @timeout 140_000
+  @timeout 180_000
 
   @type imported :: [TokenBalance.t()]
 
