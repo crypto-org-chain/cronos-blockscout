@@ -33,12 +33,12 @@ msgid "%{address} - %{subnetwork} Explorer"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:10
+#: lib/block_scout_web/templates/block/overview.html.eex:11
 msgid "%{block_type} Details"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:53
+#: lib/block_scout_web/templates/block/overview.html.eex:54
 msgid "%{block_type} Height"
 msgstr ""
 
@@ -48,12 +48,12 @@ msgid "%{block_type}s"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:83
+#: lib/block_scout_web/templates/block/overview.html.eex:84
 msgid "%{count} Transaction"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:85
+#: lib/block_scout_web/templates/block/overview.html.eex:86
 #: lib/block_scout_web/templates/chain/_block.html.eex:11
 msgid "%{count} Transactions"
 msgstr ""
@@ -76,12 +76,12 @@ msgid "(query)"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:193
+#: lib/block_scout_web/templates/block/overview.html.eex:194
 msgid "64-bit hash of value verifying proof-of-work (note: null for POA chains)."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:95
+#: lib/block_scout_web/templates/block/overview.html.eex:96
 msgid "A block producer who successfully included the block onto the blockchain."
 msgstr ""
 
@@ -116,13 +116,13 @@ msgid "API for the %{subnetwork} - BlockScout"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:99
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:100
 msgid "APIs"
 msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/layout/_footer.html.eex:51
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:86
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:87
 msgid "Accounts"
 msgstr ""
 
@@ -132,7 +132,7 @@ msgid "Action"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:376
+#: lib/block_scout_web/templates/transaction/overview.html.eex:400
 msgid "Actual gas amount used by the transaction."
 msgstr ""
 
@@ -143,12 +143,12 @@ msgid "Address"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:198
+#: lib/block_scout_web/templates/transaction/overview.html.eex:202
 msgid "Address (external or contract) receiving the transaction."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:178
+#: lib/block_scout_web/templates/transaction/overview.html.eex:182
 msgid "Address (external or contract) sending the transaction."
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/address_internal_transaction/index.html.eex:26
 #: lib/block_scout_web/templates/address_token_transfer/index.html.eex:28 lib/block_scout_web/templates/address_transaction/index.html.eex:22
-#: lib/block_scout_web/templates/layout/_network_selector.html.eex:21 lib/block_scout_web/templates/layout/_topnav.html.eex:81
+#: lib/block_scout_web/templates/layout/_network_selector.html.eex:21 lib/block_scout_web/templates/layout/_topnav.html.eex:82
 #: lib/block_scout_web/views/address_internal_transaction_view.ex:11 lib/block_scout_web/views/address_token_transfer_view.ex:11
 #: lib/block_scout_web/views/address_transaction_view.ex:11
 msgid "All"
@@ -192,7 +192,7 @@ msgid "All tokens in the account and total value."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:216
+#: lib/block_scout_web/templates/block/overview.html.eex:226
 msgid "Amount of distributed reward. Miners receive a static block reward + Tx fees + uncle fees."
 msgstr ""
 
@@ -202,7 +202,7 @@ msgid "Anything not in this list is not supported. Click on the method to be tak
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:127
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:128
 msgid "Apps"
 msgstr ""
 
@@ -228,7 +228,7 @@ msgid "Balances"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:205
+#: lib/block_scout_web/templates/block/overview.html.eex:206
 msgid "Base Fee per Gas"
 msgstr ""
 
@@ -239,13 +239,13 @@ msgid "Base URL:"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:397
+#: lib/block_scout_web/templates/transaction/overview.html.eex:421
 msgid "Binary data included with the transaction. See input / logs below for additional info."
 msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_coin_balance/_coin_balances.html.eex:8
-#: lib/block_scout_web/templates/block/overview.html.eex:27 lib/block_scout_web/templates/transaction/overview.html.eex:137
+#: lib/block_scout_web/templates/block/overview.html.eex:28 lib/block_scout_web/templates/transaction/overview.html.eex:141
 msgid "Block"
 msgstr ""
 
@@ -266,7 +266,7 @@ msgid "Block Details"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:51
+#: lib/block_scout_web/templates/block/overview.html.eex:52
 msgid "Block Height"
 msgstr ""
 
@@ -281,7 +281,7 @@ msgid "Block Pending"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:156
+#: lib/block_scout_web/templates/block/overview.html.eex:157
 msgid "Block difficulty for miner, used to calibrate block generation time (Note: constant in POA based networks)."
 msgstr ""
 
@@ -291,7 +291,7 @@ msgid "Block not found, please try again later."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:136
+#: lib/block_scout_web/templates/transaction/overview.html.eex:140
 msgid "Block number containing the transaction."
 msgstr ""
 
@@ -302,8 +302,8 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/chain/show.html.eex:153
-#: lib/block_scout_web/templates/layout/_footer.html.eex:49 lib/block_scout_web/templates/layout/_topnav.html.eex:33
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:37
+#: lib/block_scout_web/templates/layout/_footer.html.eex:49 lib/block_scout_web/templates/layout/_topnav.html.eex:34
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:38
 msgid "Blocks"
 msgstr ""
 
@@ -413,12 +413,12 @@ msgid "Confirmed"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:103
+#: lib/block_scout_web/templates/transaction/overview.html.eex:107
 msgid "Confirmed by "
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:169
+#: lib/block_scout_web/templates/transaction/overview.html.eex:173
 msgid "Confirmed within"
 msgstr ""
 
@@ -460,7 +460,7 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/tokens/overview/_details.html.eex:60
-#: lib/block_scout_web/templates/transaction/overview.html.eex:208
+#: lib/block_scout_web/templates/transaction/overview.html.eex:212
 msgid "Contract"
 msgstr ""
 
@@ -535,8 +535,8 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/overview.html.eex:46
-#: lib/block_scout_web/templates/address/overview.html.eex:47 lib/block_scout_web/templates/block/overview.html.eex:102
-#: lib/block_scout_web/templates/block/overview.html.eex:103 lib/block_scout_web/templates/tokens/overview/_details.html.eex:51
+#: lib/block_scout_web/templates/address/overview.html.eex:47 lib/block_scout_web/templates/block/overview.html.eex:103
+#: lib/block_scout_web/templates/block/overview.html.eex:104 lib/block_scout_web/templates/tokens/overview/_details.html.eex:51
 #: lib/block_scout_web/templates/tokens/overview/_details.html.eex:52
 msgid "Copy Address"
 msgstr ""
@@ -560,14 +560,14 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_total_transfers_from_to.html.eex:14
-#: lib/block_scout_web/templates/transaction/_total_transfers_from_to.html.eex:15 lib/block_scout_web/templates/transaction/overview.html.eex:188
-#: lib/block_scout_web/templates/transaction/overview.html.eex:189
+#: lib/block_scout_web/templates/transaction/_total_transfers_from_to.html.eex:15 lib/block_scout_web/templates/transaction/overview.html.eex:192
+#: lib/block_scout_web/templates/transaction/overview.html.eex:193
 msgid "Copy From Address"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:127
 #: lib/block_scout_web/templates/block/overview.html.eex:128
+#: lib/block_scout_web/templates/block/overview.html.eex:129
 msgid "Copy Hash"
 msgstr ""
 
@@ -577,8 +577,8 @@ msgid "Copy Metadata"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:147
 #: lib/block_scout_web/templates/block/overview.html.eex:148
+#: lib/block_scout_web/templates/block/overview.html.eex:149
 msgid "Copy Parent Hash"
 msgstr ""
 
@@ -595,9 +595,9 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/transaction/_total_transfers_from_to.html.eex:31
-#: lib/block_scout_web/templates/transaction/_total_transfers_from_to.html.eex:32 lib/block_scout_web/templates/transaction/overview.html.eex:217
-#: lib/block_scout_web/templates/transaction/overview.html.eex:218 lib/block_scout_web/templates/transaction/overview.html.eex:227
-#: lib/block_scout_web/templates/transaction/overview.html.eex:228
+#: lib/block_scout_web/templates/transaction/_total_transfers_from_to.html.eex:32 lib/block_scout_web/templates/transaction/overview.html.eex:221
+#: lib/block_scout_web/templates/transaction/overview.html.eex:222 lib/block_scout_web/templates/transaction/overview.html.eex:231
+#: lib/block_scout_web/templates/transaction/overview.html.eex:232
 msgid "Copy To Address"
 msgstr ""
 
@@ -608,29 +608,29 @@ msgid "Copy Token ID"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:66
+#: lib/block_scout_web/templates/transaction/overview.html.eex:70
 msgid "Copy Transaction Hash"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:67
+#: lib/block_scout_web/templates/transaction/overview.html.eex:71
 msgid "Copy Txn Hash"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:423
+#: lib/block_scout_web/templates/transaction/overview.html.eex:447
 msgid "Copy Txn Hex Input"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:429
+#: lib/block_scout_web/templates/transaction/overview.html.eex:453
 msgid "Copy Txn UTF-8 Input"
 msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/log/_data_decoded_view.html.eex:20
-#: lib/block_scout_web/templates/transaction/_decoded_input_body.html.eex:41 lib/block_scout_web/templates/transaction/overview.html.eex:422
-#: lib/block_scout_web/templates/transaction/overview.html.eex:428
+#: lib/block_scout_web/templates/transaction/_decoded_input_body.html.eex:41 lib/block_scout_web/templates/transaction/overview.html.eex:446
+#: lib/block_scout_web/templates/transaction/overview.html.eex:452
 msgid "Copy Value"
 msgstr ""
 
@@ -661,7 +661,7 @@ msgid "Curl"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:76
+#: lib/block_scout_web/templates/transaction/overview.html.eex:80
 msgid "Current transaction state: Success, Failed (Error), or Pending (In Process)"
 msgstr ""
 
@@ -673,12 +673,12 @@ msgid "Data"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:68
+#: lib/block_scout_web/templates/block/overview.html.eex:69
 msgid "Date & time at which block was produced."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:155
+#: lib/block_scout_web/templates/transaction/overview.html.eex:159
 msgid "Date & time of transaction inclusion, including length of time for confirmation."
 msgstr ""
 
@@ -741,7 +741,7 @@ msgid "Details"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:157
+#: lib/block_scout_web/templates/block/overview.html.eex:158
 msgid "Difficulty"
 msgstr ""
 
@@ -870,7 +870,7 @@ msgid "Error: Could not determine contract creator."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:113
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:114
 msgid "Eth RPC"
 msgstr ""
 
@@ -968,14 +968,14 @@ msgid "For any existing contracts in the database, insert all ABI entries into t
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:43
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:44
 msgid "Forked Blocks (Reorgs)"
 msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_internal_transaction/index.html.eex:38
 #: lib/block_scout_web/templates/address_token_transfer/index.html.eex:40 lib/block_scout_web/templates/address_transaction/index.html.eex:34
-#: lib/block_scout_web/templates/transaction/overview.html.eex:179 lib/block_scout_web/views/address_internal_transaction_view.ex:10
+#: lib/block_scout_web/templates/transaction/overview.html.eex:183 lib/block_scout_web/views/address_internal_transaction_view.ex:10
 #: lib/block_scout_web/views/address_token_transfer_view.ex:10 lib/block_scout_web/views/address_transaction_view.ex:10
 msgid "From"
 msgstr ""
@@ -987,23 +987,23 @@ msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/block/_tile.html.eex:64
-#: lib/block_scout_web/templates/block/overview.html.eex:185 lib/block_scout_web/templates/transaction/overview.html.eex:358
+#: lib/block_scout_web/templates/block/overview.html.eex:186 lib/block_scout_web/templates/transaction/overview.html.eex:362
 msgid "Gas Limit"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:338
+#: lib/block_scout_web/templates/transaction/overview.html.eex:342
 msgid "Gas Price"
 msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/address/overview.html.eex:266
-#: lib/block_scout_web/templates/block/_tile.html.eex:70 lib/block_scout_web/templates/block/overview.html.eex:176
+#: lib/block_scout_web/templates/block/_tile.html.eex:70 lib/block_scout_web/templates/block/overview.html.eex:177
 msgid "Gas Used"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:377
+#: lib/block_scout_web/templates/transaction/overview.html.eex:401
 msgid "Gas Used by Transaction"
 msgstr ""
 
@@ -1013,7 +1013,7 @@ msgid "Gas used by the address."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:58
+#: lib/block_scout_web/templates/block/overview.html.eex:59
 msgid "Genesis Block"
 msgstr ""
 
@@ -1028,18 +1028,18 @@ msgid "Go to"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:103
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:104
 msgid "GraphQL"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:121
+#: lib/block_scout_web/templates/block/overview.html.eex:122
 msgid "Hash"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:405
-#: lib/block_scout_web/templates/transaction/overview.html.eex:409
+#: lib/block_scout_web/templates/transaction/overview.html.eex:429
+#: lib/block_scout_web/templates/transaction/overview.html.eex:433
 msgid "Hex (Default)"
 msgstr ""
 
@@ -1085,12 +1085,12 @@ msgid "Implementation address of the proxy contract."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:389
+#: lib/block_scout_web/templates/transaction/overview.html.eex:413
 msgid "Index position of Transaction in the block."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:229
+#: lib/block_scout_web/templates/block/overview.html.eex:239
 msgid "Index position(s) of referenced stale blocks."
 msgstr ""
 
@@ -1110,7 +1110,7 @@ msgid "Input"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:200
+#: lib/block_scout_web/templates/transaction/overview.html.eex:204
 msgid "Interacted With (To)"
 msgstr ""
 
@@ -1174,22 +1174,22 @@ msgid "License ID"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:290
+#: lib/block_scout_web/templates/transaction/overview.html.eex:294
 msgid "List of ERC-1155 tokens created in the transaction."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:274
+#: lib/block_scout_web/templates/transaction/overview.html.eex:278
 msgid "List of token burnt in the transaction."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:257
+#: lib/block_scout_web/templates/transaction/overview.html.eex:261
 msgid "List of token minted in the transaction."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:241
+#: lib/block_scout_web/templates/transaction/overview.html.eex:245
 msgid "List of token transferred in the transaction."
 msgstr ""
 
@@ -1240,7 +1240,7 @@ msgid "Market Cap"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:367
+#: lib/block_scout_web/templates/transaction/overview.html.eex:371
 msgid "Max Fee per Gas"
 msgstr ""
 
@@ -1250,12 +1250,12 @@ msgid "Max of"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:357
+#: lib/block_scout_web/templates/transaction/overview.html.eex:361
 msgid "Maximum gas amount approved for the transaction."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:366
+#: lib/block_scout_web/templates/transaction/overview.html.eex:370
 msgid "Maximum total amount per unit of gas a user is willing to pay for a transaction, including base fee and priority fee."
 msgstr ""
 
@@ -1271,7 +1271,7 @@ msgid "Method Id"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:96
+#: lib/block_scout_web/templates/block/overview.html.eex:97
 msgid "Miner"
 msgstr ""
 
@@ -1287,7 +1287,7 @@ msgid "Minimal Proxy Contract for"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:204
+#: lib/block_scout_web/templates/block/overview.html.eex:205
 msgid "Minimum fee required per unit of gas. Fee adjusts based on network congestion."
 msgstr ""
 
@@ -1320,7 +1320,7 @@ msgid "Must be set to:"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:114
+#: lib/block_scout_web/templates/block/overview.html.eex:115
 msgid "N/A bytes"
 msgstr ""
 
@@ -1368,8 +1368,8 @@ msgid "No"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:194
-#: lib/block_scout_web/templates/transaction/overview.html.eex:387
+#: lib/block_scout_web/templates/block/overview.html.eex:195
+#: lib/block_scout_web/templates/transaction/overview.html.eex:411
 msgid "Nonce"
 msgstr ""
 
@@ -1453,12 +1453,12 @@ msgid "Parameters"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:137
+#: lib/block_scout_web/templates/block/overview.html.eex:138
 msgid "Parent Hash"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:64
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:65
 #: lib/block_scout_web/views/transaction_view.ex:348 lib/block_scout_web/views/transaction_view.ex:386
 msgid "Pending"
 msgstr ""
@@ -1475,12 +1475,12 @@ msgid "Play"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:389
+#: lib/block_scout_web/templates/transaction/overview.html.eex:413
 msgid "Position"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:234
+#: lib/block_scout_web/templates/block/overview.html.eex:244
 msgid "Position %{index}"
 msgstr ""
 
@@ -1507,7 +1507,7 @@ msgid "Price per token on the exchanges"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:337
+#: lib/block_scout_web/templates/transaction/overview.html.eex:341
 msgid "Price per unit of gas specified by the sender. Higher gas prices can prioritize transaction inclusion during times of high usage."
 msgstr ""
 
@@ -1528,12 +1528,12 @@ msgid "Query"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:108
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:109
 msgid "RPC"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:398
+#: lib/block_scout_web/templates/transaction/overview.html.eex:422
 msgid "Raw Input"
 msgstr ""
 
@@ -1592,12 +1592,12 @@ msgid "Responses"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:77
+#: lib/block_scout_web/templates/transaction/overview.html.eex:81
 msgid "Result"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:114
+#: lib/block_scout_web/templates/transaction/overview.html.eex:118
 msgid "Revert reason"
 msgstr ""
 
@@ -1685,12 +1685,12 @@ msgid "Shows total assets held in the address"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:112
+#: lib/block_scout_web/templates/block/overview.html.eex:113
 msgid "Size"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:111
+#: lib/block_scout_web/templates/block/overview.html.eex:112
 msgid "Size of the block in bytes."
 msgstr ""
 
@@ -1725,7 +1725,7 @@ msgid "Sources and Metadata JSON"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:129
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:130
 msgid "Stakes"
 msgstr ""
 
@@ -1740,7 +1740,7 @@ msgid "Static Call"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:89
+#: lib/block_scout_web/templates/transaction/overview.html.eex:93
 msgid "Status"
 msgstr ""
 
@@ -1767,12 +1767,12 @@ msgid "Testnet"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:120
+#: lib/block_scout_web/templates/block/overview.html.eex:121
 msgid "The SHA256 hash of the block."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:49
+#: lib/block_scout_web/templates/block/overview.html.eex:50
 msgid "The block height of a particular block is defined as the number of blocks preceding it in the blockchain."
 msgstr ""
 
@@ -1782,7 +1782,7 @@ msgid "The fallback function is executed on a call to the contract if none of th
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:136
+#: lib/block_scout_web/templates/block/overview.html.eex:137
 msgid "The hash of the block from which this block was generated."
 msgstr ""
 
@@ -1797,7 +1797,7 @@ msgid "The name of the validator."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:77
+#: lib/block_scout_web/templates/block/overview.html.eex:78
 msgid "The number of transactions in the block."
 msgstr ""
 
@@ -1807,12 +1807,12 @@ msgid "The receive function is executed on a call to the contract with empty cal
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:113
+#: lib/block_scout_web/templates/transaction/overview.html.eex:117
 msgid "The revert reason of the transaction."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:88
+#: lib/block_scout_web/templates/transaction/overview.html.eex:92
 msgid "The status of the transaction: Confirmed or Unconfirmed."
 msgstr ""
 
@@ -1822,7 +1822,7 @@ msgid "The total amount of tokens issued"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:175
+#: lib/block_scout_web/templates/block/overview.html.eex:176
 msgid "The total gas amount used in the block and its percentage of gas filled in the block."
 msgstr ""
 
@@ -1949,20 +1949,20 @@ msgid "This is useful to allow sending requests to blockscout without having to 
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:43
+#: lib/block_scout_web/templates/transaction/overview.html.eex:47
 msgid "This transaction is pending confirmation."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:69
-#: lib/block_scout_web/templates/transaction/overview.html.eex:156
+#: lib/block_scout_web/templates/block/overview.html.eex:70
+#: lib/block_scout_web/templates/transaction/overview.html.eex:160
 msgid "Timestamp"
 msgstr ""
 
 #, elixir-format
 #: lib/block_scout_web/templates/address_internal_transaction/index.html.eex:32
 #: lib/block_scout_web/templates/address_token_transfer/index.html.eex:34 lib/block_scout_web/templates/address_transaction/index.html.eex:28
-#: lib/block_scout_web/templates/transaction/overview.html.eex:202 lib/block_scout_web/views/address_internal_transaction_view.ex:9
+#: lib/block_scout_web/templates/transaction/overview.html.eex:206 lib/block_scout_web/views/address_internal_transaction_view.ex:9
 #: lib/block_scout_web/views/address_token_transfer_view.ex:9 lib/block_scout_web/views/address_transaction_view.ex:9
 msgid "To"
 msgstr ""
@@ -1979,7 +1979,7 @@ msgid "To see accurate decoded input data, the contract must be verified."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:22
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:23
 msgid "Toggle navigation"
 msgstr ""
 
@@ -2053,28 +2053,28 @@ msgstr ""
 #: lib/block_scout_web/templates/address/_tabs.html.eex:21
 #: lib/block_scout_web/templates/address/overview.html.eex:201 lib/block_scout_web/templates/address_token/overview.html.eex:58
 #: lib/block_scout_web/templates/address_token_transfer/index.html.eex:13 lib/block_scout_web/templates/layout/_footer.html.eex:52
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:77 lib/block_scout_web/templates/tokens/index.html.eex:10
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:78 lib/block_scout_web/templates/tokens/index.html.eex:10
 #: lib/block_scout_web/views/address_view.ex:369
 msgid "Tokens"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:275
+#: lib/block_scout_web/templates/transaction/overview.html.eex:279
 msgid "Tokens Burnt"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:291
+#: lib/block_scout_web/templates/transaction/overview.html.eex:295
 msgid "Tokens Created"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:258
+#: lib/block_scout_web/templates/transaction/overview.html.eex:262
 msgid "Tokens Minted"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:242
+#: lib/block_scout_web/templates/transaction/overview.html.eex:246
 msgid "Tokens Transferred"
 msgstr ""
 
@@ -2095,7 +2095,7 @@ msgid "Topics"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:167
+#: lib/block_scout_web/templates/block/overview.html.eex:168
 msgid "Total Difficulty"
 msgstr ""
 
@@ -2110,12 +2110,12 @@ msgid "Total blocks"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:166
+#: lib/block_scout_web/templates/block/overview.html.eex:167
 msgid "Total difficulty of the chain until this block."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:184
+#: lib/block_scout_web/templates/block/overview.html.eex:185
 msgid "Total gas limit provided by all transactions in the block."
 msgstr ""
 
@@ -2125,7 +2125,7 @@ msgid "Total supply"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:322
+#: lib/block_scout_web/templates/transaction/overview.html.eex:326
 msgid "Total transaction fee."
 msgstr ""
 
@@ -2151,17 +2151,17 @@ msgid "Transaction %{transaction}, %{subnetwork} %{transaction}"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:34
+#: lib/block_scout_web/templates/transaction/overview.html.eex:38
 msgid "Transaction Details"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:323
+#: lib/block_scout_web/templates/transaction/overview.html.eex:327
 msgid "Transaction Fee"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:59
+#: lib/block_scout_web/templates/transaction/overview.html.eex:63
 msgid "Transaction Hash"
 msgstr ""
 
@@ -2172,17 +2172,17 @@ msgid "Transaction Inputs"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:347
+#: lib/block_scout_web/templates/transaction/overview.html.eex:351
 msgid "Transaction Type"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:386
+#: lib/block_scout_web/templates/transaction/overview.html.eex:410
 msgid "Transaction number from the sending address. Each transaction sent from an address increments the nonce by 1."
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:346
+#: lib/block_scout_web/templates/transaction/overview.html.eex:350
 msgid "Transaction type, introduced in EIP-2718."
 msgstr ""
 
@@ -2190,9 +2190,9 @@ msgstr ""
 #: lib/block_scout_web/templates/address/_tabs.html.eex:7
 #: lib/block_scout_web/templates/address/overview.html.eex:212 lib/block_scout_web/templates/address/overview.html.eex:218
 #: lib/block_scout_web/templates/address/overview.html.eex:226 lib/block_scout_web/templates/address_transaction/index.html.eex:13
-#: lib/block_scout_web/templates/block/overview.html.eex:78 lib/block_scout_web/templates/block_transaction/index.html.eex:10
+#: lib/block_scout_web/templates/block/overview.html.eex:79 lib/block_scout_web/templates/block_transaction/index.html.eex:10
 #: lib/block_scout_web/templates/chain/show.html.eex:213 lib/block_scout_web/templates/layout/_footer.html.eex:50
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:52 lib/block_scout_web/views/address_view.ex:371
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:53 lib/block_scout_web/views/address_view.ex:371
 msgid "Transactions"
 msgstr ""
 
@@ -2241,7 +2241,7 @@ msgid "Type of the token standard"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:412
+#: lib/block_scout_web/templates/transaction/overview.html.eex:436
 msgid "UTF-8"
 msgstr ""
 
@@ -2251,8 +2251,8 @@ msgid "Uncle Reward"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:230
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:40
+#: lib/block_scout_web/templates/block/overview.html.eex:240
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:41
 msgid "Uncles"
 msgstr ""
 
@@ -2267,7 +2267,7 @@ msgid "Unique Token"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:58
+#: lib/block_scout_web/templates/transaction/overview.html.eex:62
 msgid "Unique character string (TxID) assigned to every verified transaction."
 msgstr ""
 
@@ -2277,7 +2277,7 @@ msgid "Use the search box to find a hosted network, or select from the list of a
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/layout/_topnav.html.eex:56
+#: lib/block_scout_web/templates/layout/_topnav.html.eex:57
 msgid "Validated"
 msgstr ""
 
@@ -2307,12 +2307,12 @@ msgid "Validator Name"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:308
+#: lib/block_scout_web/templates/transaction/overview.html.eex:312
 msgid "Value"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:307
+#: lib/block_scout_web/templates/transaction/overview.html.eex:311
 msgid "Value sent in the native token (and USD) if applicable."
 msgstr ""
 
@@ -2385,12 +2385,12 @@ msgid "View More Transfers"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:37
+#: lib/block_scout_web/templates/block/overview.html.eex:38
 msgid "View next block"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/block/overview.html.eex:21
+#: lib/block_scout_web/templates/block/overview.html.eex:22
 msgid "View previous block"
 msgstr ""
 
@@ -2474,7 +2474,7 @@ msgid "button"
 msgstr ""
 
 #, elixir-format
-#: lib/block_scout_web/templates/transaction/overview.html.eex:213
+#: lib/block_scout_web/templates/transaction/overview.html.eex:217
 msgid "created"
 msgstr ""
 
@@ -2649,4 +2649,30 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/templates/chain/gas_price_oracle_legend_item.html.eex:20
 msgid "Slow"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/transaction/overview.html.eex:381
+msgid "Max Priority Fee per Gas"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/block/overview.html.eex:215
+#: lib/block_scout_web/templates/transaction/overview.html.eex:391
+msgid "Priority Fee / Tip"
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/transaction/overview.html.eex:380
+msgid "User defined maximum fee (tip) per unit of gas paid to validator for transaction prioritization."
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/transaction/overview.html.eex:390
+msgid "User-defined tip sent to validator for transaction priority/inclusion."
+msgstr ""
+
+#, elixir-format
+#: lib/block_scout_web/templates/block/overview.html.eex:214
+msgid "User-defined tips sent to validator for transaction priority/inclusion."
 msgstr ""
