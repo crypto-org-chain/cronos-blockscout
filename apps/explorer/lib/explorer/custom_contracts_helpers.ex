@@ -13,6 +13,8 @@ defmodule Explorer.CustomContractsHelpers do
 
   @white_list @address_list_map |> Map.get("white_list")
 
+  @phenix_finance_hacker_list @address_list_map |> Map.get("phenix_finance_hacker")
+
   def is_in_black_list(address, symbol) do
     result =
       cond do
@@ -46,6 +48,31 @@ defmodule Explorer.CustomContractsHelpers do
       end
 
     result
+  end
+
+  def is_phenix_hacker(address) do
+    if @phenix_finance_hacker_list != nil do
+      String.downcase("#{address}") in @phenix_finance_hacker_list
+    else
+      false
+    end
+  end
+
+  def phenix_hacker_index(address) do
+    if String.downcase("#{address}") in @phenix_finance_hacker_list do
+      index_of(String.downcase("#{address}"), @phenix_finance_hacker_list)
+    else
+      ""
+    end
+  end
+
+  def index_of(value, list) do
+    map = :lists.zip(list, :lists.seq(1, length(list)))
+
+    case :dict.find(value, :dict.from_list(map)) do
+      {:ok, index} -> index
+      _ -> ""
+    end
   end
 
   def get_custom_addresses_list(env_var) do
