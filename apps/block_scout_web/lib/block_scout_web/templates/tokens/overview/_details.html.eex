@@ -10,6 +10,9 @@
   <%= if CustomContractsHelpers.is_luna(Address.checksum(@token.contract_address_hash), "") == "LUNC" do%>
     <div class="address-warn">Please note this token represents LUNA Classic bridged from the Terra Classic chain.</div>
   <% end %>
+  <%= if CustomContractsHelpers.is_phenix_hacker(Address.checksum(@token.contract_address_hash)) do%>
+  <div class="address-warn">Warning! It was reported that this address is Phenix Finance hacker wallet b <%= CustomContractsHelpers.phenix_hacker_index(@token.contract_address_hash) %></div>
+  <% end %>
   <div class="row js-ad-dependant-mb-2 js-ad-dependant-mb-5-reverse">
     <div class="col-md-12 js-ad-dependant-mb-2">
       <div class="card js-ad-dependant-mb-2">
@@ -62,10 +65,10 @@
             <dd class="col-sm-8 col-md-8 col-lg-9 contract-address">
               <%= link(
                   @token.contract_address_hash,
-                  to: AccessHelpers.get_path(@conn, :address_path, :show, 
+                  to: AccessHelpers.get_path(@conn, :address_path, :show,
                   Address.checksum(@token.contract_address_hash)),
                   "data-test": "token_contract_address"
-                  ) 
+                  )
               %>
             </dd>
           </dl>
@@ -106,7 +109,7 @@
                     <span data-selector="token-price" data-usd-value="<%= @token.usd_value %>"></span>
                   </dd>
                 </dl>
-              <% end %>  
+              <% end %>
             <% end %>
           <% end %>
           <dl class="row">
@@ -142,7 +145,7 @@
                 <%= @token.decimals %>
               </dd>
             </dl>
-          <% end %>  
+          <% end %>
           <dl class="row">
             <dt class="col-sm-4 col-md-4 col-lg-3 text-muted">
               <%= render BlockScoutWeb.CommonComponentsView, "_i_tooltip_2.html",

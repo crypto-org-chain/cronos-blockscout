@@ -11,6 +11,9 @@
   <%= if CustomContractsHelpers.is_luna(@address, "") == "LUNC" do%>
     <div class="address-warn">Please note this token represents LUNA Classic bridged from the Terra Classic chain.</div>
   <% end %>
+  <%= if CustomContractsHelpers.is_phenix_hacker(@address) do%>
+  <div class="address-warn">Warning! It was reported that this address is Phenix Finance hacker wallet <%= CustomContractsHelpers.phenix_hacker_index(@address) %></div>
+  <% end %>
   <div class="row js-ad-dependant-mb-2 js-ad-dependant-mb-5-reverse">
     <!-- Address details -->
     <div class="col-md-12 js-ad-dependant-mb-2">
