@@ -33,7 +33,7 @@
           <a href="https://twitter.com/cronos_chain" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Twitter") %>'>
             <i class="fab fa-twitter"></i>
           </a>
-          <a href="https://t.me/Cryptoorg_Chain_Announcements" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Telegram") %>'>
+          <a href="https://t.me/Cronos_Announcements" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Telegram") %>'>
             <i class="fab fa-telegram-plane"></i>
           </a>
           <a href="https://discord.com/invite/pahqHz26q4" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Discord") %>'>
