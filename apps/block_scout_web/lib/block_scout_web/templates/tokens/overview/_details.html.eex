@@ -13,6 +13,9 @@
   <%= if CustomContractsHelpers.is_phenix_hacker(Address.checksum(@token.contract_address_hash)) do%>
   <div class="address-warn">Warning! It was reported that this address is Phenix Finance hacker wallet b <%= CustomContractsHelpers.phenix_hacker_index(@token.contract_address_hash) %></div>
   <% end %>
+  <%= if CustomContractsHelpers.is_suspicious_address(Address.checksum(@token.contract_address_hash)) do%>
+  <div class="address-warn">Warning! This address has been reported as suspicious and potentially involved in fraudulent activities. Please exercise caution when interacting with this address.</div>
+  <% end %>
   <div class="row js-ad-dependant-mb-2 js-ad-dependant-mb-5-reverse">
     <div class="col-md-12 js-ad-dependant-mb-2">
       <div class="card js-ad-dependant-mb-2">

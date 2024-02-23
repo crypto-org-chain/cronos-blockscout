@@ -15,6 +15,8 @@ defmodule Explorer.CustomContractsHelpers do
 
   @phenix_finance_hacker_list @address_list_map |> Map.get("phenix_finance_hacker")
 
+  @suspicious_list @address_list_map |> Map.get("suspicious_list")
+
   def is_in_black_list(address, symbol) do
     result =
       cond do
@@ -53,6 +55,14 @@ defmodule Explorer.CustomContractsHelpers do
   def is_phenix_hacker(address) do
     if @phenix_finance_hacker_list != nil do
       String.downcase("#{address}") in @phenix_finance_hacker_list
+    else
+      false
+    end
+  end
+
+  def is_suspicious_address(address) do
+    if @suspicious_list != nil do
+      String.downcase("#{address}") in @suspicious_list
     else
       false
     end
